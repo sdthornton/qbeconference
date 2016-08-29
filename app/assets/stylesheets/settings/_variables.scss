@@ -1,0 +1,51 @@
+$font-sans-serif: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-monospace: 'Inconsolata', monospace;
+
+$type-scale: (
+  -1: 0.75rem,
+  0: 1rem,
+  1: 1.333rem,
+  2: 1.777rem,
+  3: 2.369rem,
+  4: 3.157rem,
+  5: 4.209rem
+);
+
+$base-font-size: 1rem;
+$base-line-height: $base-font-size * 1.5;
+
+$line-heights: (
+  -1: $base-line-height,
+  0: $base-line-height,
+  1: $base-line-height * 2,
+  2: $base-line-height * 2,
+  3: $base-line-height * 2,
+  4: $base-line-height * 3,
+  5: $base-line-height * 3
+);
+
+$margins: (
+  -1: $base-line-height,
+  0: $base-line-height,
+  1: $base-line-height,
+  2: $base-line-height,
+  3: $base-line-height,
+  4: $base-line-height,
+  5: $base-line-height
+);
+
+$colors: (
+  primary: #2962FF,
+  accent: #32c96c,
+  alt: #C62828,
+  black: #212121,
+  gray-darker: #424242,
+  gray-dark: #616161,
+  gray-darkish: #757575,
+  gray: #9E9E9E,
+  gray-lightish: #BDBDBD,
+  gray-light: #E0E0E0,
+  gray-lighter: #F5F5F5
+);
+
+$border-radius: 3px;

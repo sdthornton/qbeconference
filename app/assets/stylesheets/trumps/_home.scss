@@ -1,0 +1,35 @@
+.u-home-banner {
+  padding: $base-line-height*3 0;
+}
+
+.u-home-banner__heading {
+  border: 5px solid white;
+  padding: $base-line-height;
+  position: relative;
+
+  &:before,
+  &:after {
+    background: color(primary);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 0.5rem;
+    position: absolute;
+  }
+
+  &:before {
+    content: "The";
+    left: 0;
+    top: -1.25rem;
+  }
+
+  &:after {
+    bottom: -1rem;
+    content: "(a meta-analysis)";
+    right: 0;
+  }
+}
+
+.u-home-roundtable {
+  margin-top: -5*$base-line-height;
+}

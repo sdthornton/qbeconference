@@ -1,0 +1,21 @@
+@function type-scale($level) {
+  @return map-get($type-scale, $level);
+}
+
+@function line-height($level) {
+  @return map-get($line-heights, $level);
+}
+
+@function margin($level) {
+  @return map-get($margins, $level);
+}
+
+@mixin type-setting($level: 0, $include-margin: true) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+
+  @if ($include-margin == true) {
+    margin-top: 0;
+    margin-bottom: margin($level);
+  }
+}

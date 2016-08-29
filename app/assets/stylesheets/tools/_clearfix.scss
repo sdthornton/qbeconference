@@ -1,0 +1,13 @@
+@mixin clearfix($important: false) {
+  @if ($important == "important") {
+    $important: unquote("!important");
+  } @else {
+    $important: null;
+  }
+
+  &:after {
+    content: "" $important;
+    display: table $important;
+    clear: both $important;
+  }
+}

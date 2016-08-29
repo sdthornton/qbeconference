@@ -1,0 +1,29 @@
+.o-countdown {
+  color: color(black);
+  font-family: $font-monospace;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.o-countdown__number {
+  display: inline-block;
+  font-size: map-get($type-scale, 4);
+  line-height: 1;
+  height: 4.5rem;
+  text-align: center;
+  width: 6rem;
+
+  &:after {
+    color: color(gray);
+    display: block;
+    font-family: $font-sans-serif;
+    font-size: map-get($type-scale, -1);
+    margin-bottom: 0.5rem;
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+  }
+}
+
+.o-countdown__number--days:after { content: "Days"; }
+.o-countdown__number--hours:after { content: "Hours"; }
+.o-countdown__number--minutes:after { content: "Minutes"; }
