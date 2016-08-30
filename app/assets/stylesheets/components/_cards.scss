@@ -1,0 +1,35 @@
+.c-card {
+  background: white;
+  border-radius: $border-radius;
+  // box-shadow: map-get($box-shadows, normal);
+  margin-bottom: $base-line-height;
+  overflow: hidden;
+}
+
+.c-card__image {
+  height: auto;
+  width: 100%;
+}
+
+.c-card__content {
+  padding: $base-line-height;
+  padding-top: 0.5rem;
+}
+
+.c-card__category {
+  color: color(gray);
+  font-family: $font-monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.c-card__ref {
+  color: color(gray-dark);
+  font-family: $font-monospace;
+
+  &:active,
+  &:visited,
+  &:focus {
+    color: color(gray-dark);
+  }
+}

@@ -1,0 +1,7 @@
+.u-radius { border-radius: $border-radius; }
+.u-round { border-radius: 50%; }
+
+.u-radius,
+.u-round {
+  overflow: hidden;
+}
