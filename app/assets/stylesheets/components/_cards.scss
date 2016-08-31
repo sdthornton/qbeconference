@@ -1,9 +1,14 @@
 .c-card {
   background: white;
   border-radius: $border-radius;
-  // box-shadow: map-get($box-shadows, normal);
+  box-shadow: map-get($box-shadows, small);
   margin-bottom: $base-line-height;
   overflow: hidden;
+  transition: map-get($transitions, simple);
+
+  &:hover {
+    box-shadow: map-get($box-shadows, wide);
+  }
 }
 
 .c-card__image {

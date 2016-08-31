@@ -1,4 +1,5 @@
 .o-container {
+  @include clearfix;
   margin: auto;
   max-width: 1248px + 64px;
   padding: 0 32px;

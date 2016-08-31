@@ -6,6 +6,10 @@
 
 .u-large-padding { padding: 2*$base-line-height 64px; }
 .u-large-bottom-padding { padding-bottom: 2*$base-line-height; }
+.u-large-vertical-padding {
+  padding-bottom: 2*$base-line-height;
+  padding-top: 2*$base-line-height;
+}
 
 .u-stretch-in-grid {
   margin-left: -64px;

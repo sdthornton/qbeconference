@@ -1,5 +1,19 @@
 .u-home-banner {
+  background: url('https://images.unsplash.com/photo-1462743708072-4ed3a4a860be?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1928&q=80&cs=tinysrgb') center center no-repeat;
+  background-size: cover;
   padding: $base-line-height*3 0;
+  position: relative;
+
+  &:before {
+    background: #212121;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.15;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 
 .u-home-banner__heading {
@@ -7,29 +21,35 @@
   padding: $base-line-height;
   position: relative;
 
-  &:before,
-  &:after {
-    background: color(primary);
+  &:before {
+    content: "The";
     font-size: 1rem;
     font-weight: 400;
+    left: 0;
     line-height: 1;
     padding: 0.5rem;
     position: absolute;
-  }
-
-  &:before {
-    content: "The";
-    left: 0;
-    top: -1.25rem;
-  }
-
-  &:after {
-    bottom: -1rem;
-    content: "(a meta-analysis)";
-    right: 0;
+    top: 0;
   }
 }
 
 .u-home-roundtable {
   margin-top: -5*$base-line-height;
+}
+
+.u-home-question-image {
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: -4*$base-line-height;
+  padding-bottom: $base-line-height;
+  width: 100%;
+  z-index: -1;
+}
+
+.u-home-question-image__img {
+  background: url('https://images.unsplash.com/photo-1461950209984-1ce1f03a1be9?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1499&q=80&cs=tinysrgb') center center no-repeat;
+  background-size: cover;
+  height: 14*$base-line-height;
+  width: 100%;
 }

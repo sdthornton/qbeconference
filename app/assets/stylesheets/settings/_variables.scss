@@ -51,7 +51,12 @@ $colors: (
 $border-radius: 2px;
 
 $box-shadows: (
-  normal: 0 2px 4px rgba(0,0,0,0.15),
-  wide: 0 10px 40px rgba(0,0,0,0.15),
+  small: 0 3px 10px rgba(0,0,0,0.1),
+  normal: 0 5px 20px rgba(0,0,0,0.15),
+  wide: 0 10px 40px rgba(0,0,0,0.2),
   xwide: 0 15px 60px rgba(0,0,0,0.25)
+);
+
+$transitions: (
+  simple: all 0.2s ease-in-out
 );
