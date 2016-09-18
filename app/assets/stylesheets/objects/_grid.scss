@@ -1,11 +1,14 @@
 .o-grid {
   @include clearfix;
-  margin-left: -32px;
-  margin-right: -32px;
+  margin-left: -64px;
+  margin-right: -64px;
   position: relative;
 }
 
 .o-grid--small-padding {
+  margin-left: -32px;
+  margin-right: -32px;
+
   .o-grid__cell {
     padding: 0 32px;
   }
@@ -41,3 +44,7 @@
 .o-grid__cell--offset-3 { margin-left: 25%; }
 .o-grid__cell--offset-2 { margin-left: 16.666%; }
 .o-grid__cell--offset-1 { margin-left: 8.333%; }
+
+.o-grid__cell--pull-2 { margin-left: -16.666%; }
+.o-grid__cell--pull-4 { margin-left: -33.333%; }
+.o-grid__cell--pull-6 { margin-left: -50%; }

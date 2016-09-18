@@ -3,8 +3,23 @@ html {
   font: 400 100%/1.5 $font-sans-serif;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 960px) {
   html { font-size: 112.5% }
 }
 
-section { @include clearfix; }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main, section { @include clearfix; }
+
+main { flex: 1 0 auto; }
+
+hr {
+  border: none;
+  border-bottom: 1px solid color(gray-lightish);
+}
+
+textarea { max-width: 100%; }

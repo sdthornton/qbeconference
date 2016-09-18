@@ -1,0 +1,18 @@
+<div class="u-bg-white o-session__header">
+  <%= link_to login_path do %>
+    <h5
+      class="o-sessions__header-link u-font-normal u-font-monospace
+        <%= 'o-session__header-link--current' if controller_name == 'sessions' %>"
+    >
+      Login
+    </h5>
+  <% end %>
+  <%= link_to register_path do %>
+    <h5
+      class="o-sessions__header-link u-font-normal u-font-monospace
+        <%= 'o-session__header-link--current' if controller_name == 'registrations' %>"
+    >
+      Sign up
+    </h5>
+  <% end %>
+</div>

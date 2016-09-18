@@ -1,0 +1,46 @@
+<section class="u-large-vertical-padding u-bg-light-gray">
+  <div class="o-container o-container--xsmall">
+    <div class="o-grid">
+      <div class="o-grid__cell o-grid__cell--12 u-text-center">
+        <h3 class="u-no-bottom-margin">Welcome back.</h3>
+        <h5 class="c-sub-heading u-font-normal u-font-monospace">Keep the conversation going.</h5>
+
+        <div class="c-card c-card--no-shadow">
+          <%= render "devise/shared/sign-in-up-header" %>
+
+          <div class="c-card__content u-text-left">
+            <%= render "devise/shared/oauth" %>
+
+            <hr class="c-or-line u-double-push-down">
+
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "u-double-push-down" }) do |f| %>
+              <div class="c-form__group">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: "c-form__control", autocapitalize: "off", autocorrect: "off" %>
+              </div>
+
+              <div class="c-form__group">
+                <%= f.label :password %>
+                <%= f.password_field :password, class: "c-form__control", autocomplete: "off" %>
+                <small class="c-form__text">
+                  <%= link_to "Forgot your password?", new_password_path(resource_name), class: "u-text-gray" %>
+                </small>
+              </div>
+
+              <% if devise_mapping.rememberable? -%>
+                <div class="c-form__group">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                </div>
+              <% end -%>
+
+              <div class="c-form__group">
+                <%= f.submit "Log in", class: "c-button c-button--accent c-button--block" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

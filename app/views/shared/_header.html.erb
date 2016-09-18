@@ -1,2 +1,16 @@
-<header class="u-bg-white" style="height: 4.5rem">
+<header id="site_header" class="o-header o-container" data-turbolinks-permanent>
+  <a href="/">
+    <%= image_tag "qbe-logo.svg", height: "36", class: "o-header__logo" %>
+  </a>
+  <nav class="o-main-nav u-text-right">
+    <a href class="o-main-nav__link">The QBE</a>
+    <%= link_to "Press & Papers", press_and_papers_path, class: "o-main-nav__link" %>
+    <a href class="o-main-nav__link">ACR & Roundtable</a>
+    <%= link_to "Discussion", discussions_path, class: "o-main-nav__link" %>
+    <%= link_to "Contact", contact_path, class: "o-main-nav__link" %>
+    <% if user_signed_in? %>
+      <%= link_to "Log Out", logout_path, class: "o-main-nav__link", method: :delete %>
+    <% else %>
+      <%= link_to "Log in", login_path, class: "o-main-nav__link o-main-nav__link--sign-up u-text-white u-bg-primary" %>
+    <% end %>
 </header>

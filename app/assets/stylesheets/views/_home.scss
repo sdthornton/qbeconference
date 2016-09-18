@@ -1,4 +1,4 @@
-.u-home-banner {
+.v-home-banner {
   background: url('https://images.unsplash.com/photo-1462743708072-4ed3a4a860be?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1928&q=80&cs=tinysrgb') center center no-repeat;
   background-size: cover;
   padding: $base-line-height*3 0;
@@ -9,14 +9,14 @@
     content: "";
     height: 100%;
     left: 0;
-    opacity: 0.15;
+    opacity: 0.2;
     position: absolute;
     top: 0;
     width: 100%;
   }
 }
 
-.u-home-banner__heading {
+.v-home-banner__heading {
   border: 5px solid white;
   padding: $base-line-height;
   position: relative;
@@ -33,21 +33,23 @@
   }
 }
 
-.u-home-roundtable {
+.v-home-roundtable {
   margin-top: -5*$base-line-height;
+  padding-left: 64px;
+  padding-right: 64px;
 }
 
-.u-home-question-image {
+.v-home-question-image {
   float: left;
   margin-left: 0;
   margin-right: 0;
   margin-top: -4*$base-line-height;
   padding-bottom: $base-line-height;
   width: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
-.u-home-question-image__img {
+.v-home-question-image__img {
   background: url('https://images.unsplash.com/photo-1461950209984-1ce1f03a1be9?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1499&q=80&cs=tinysrgb') center center no-repeat;
   background-size: cover;
   height: 14*$base-line-height;

@@ -1,0 +1,24 @@
+<article>
+  <h1><%= @discussion.title %></h1>
+  <div><%= @discussion.content %></div>
+  <hr>
+</article>
+<br>
+<% if user_signed_in? %>
+  <%= form_for([@discussion, @new_comment]) do |f| %>
+    <% if @new_comment.errors.any? %>
+      <ul>
+        <% @new_comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= f.text_field :content %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+<br>
+<section id="comments">
+  <%= comments_tree_for @comments %>
+</section>

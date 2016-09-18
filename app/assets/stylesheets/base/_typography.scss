@@ -20,3 +20,18 @@ p {
   font-family: $font-monospace;
   margin: 0 0 margin(1);
 }
+
+a {
+  color: color(black);
+
+  &:hover:not(.c-button) {
+    color: color(primary);
+  }
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+small { font-size: 75%; }

@@ -1,0 +1,16 @@
+.c-oauth-button {
+  background: white;
+  margin-bottom: $base-line-height;
+  padding: 0.75rem;
+  text-decoration: none;
+}
+
+.c-oauth-button--linkedin {
+  background: #0077b5;
+}
+
+.c-button__image {
+  display: inline-block;
+  margin-right: 1rem;
+  vertical-align: middle;
+}

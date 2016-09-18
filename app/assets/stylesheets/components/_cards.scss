@@ -11,6 +11,11 @@
   }
 }
 
+.c-card--no-shadow,
+.c-card--no-shadow:hover {
+  box-shadow: none;
+}
+
 .c-card__image {
   height: auto;
   width: 100%;
@@ -18,7 +23,7 @@
 
 .c-card__content {
   padding: $base-line-height;
-  padding-top: 0.5rem;
+  padding-top: 0.5*$base-line-height;
 }
 
 .c-card__category {

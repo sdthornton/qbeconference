@@ -1,0 +1,19 @@
+<div class="c-discussion-item">
+  <div class="c-discussion-item__voting">
+    <%= link_to "&uarr;".html_safe, discussion_upvote_path(discussion.slug), class: 'vote' %><br>
+    <span class="vote-count"><%= discussion.votes %></span><br>
+    <a href="#" class="vote">&darr;</a>
+  </div>
+  <div class="c-discussion-item__content">
+    <%= link_to discussion_path(discussion.slug), class: "c-discussion-item__link" do %>
+      <h5 class="c-discussion-item__title u-no-bottom-margin"><%= discussion.title %></h5>
+    <% end %>
+    <div class="c-discussion-item__info">
+      <span><%= time_ago_in_words(discussion.created_at) %> ago</span> &nbsp;&bull;&nbsp;
+      <span><%= discussion.created_by %></span> &nbsp;&bull;&nbsp;
+      <%= link_to discussion_path(discussion.slug, anchor: "comments") do %>
+        <%= discussion.comments_count %> comments
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.o-session__header {
+  @include clearfix;
+}
+
+.o-sessions__header-link {
+  background: color(gray-lighter);
+  border: 1px solid color(gray-light);
+  border-top: 0;
+  float: left;
+  margin: 0;
+  padding: 0.5*$base-line-height $base-line-height;
+  width: 50%;
+
+  a:first-child & {
+    border-left: 0;
+  }
+
+  a:last-child & {
+    border-right: 0;
+  }
+}
+
+.o-session__header-link--current {
+  background: white;
+  border: none;
+}

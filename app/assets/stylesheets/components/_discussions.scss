@@ -1,0 +1,29 @@
+.c-discussion-items {
+  padding: 0 0.5*$base-line-height;
+}
+
+.c-discussion-items,
+.c-discussion-item {
+  width: 100%;
+}
+
+.c-discussion-item {
+  margin-bottom: $base-line-height;
+  padding-left: 2*$base-line-height;
+  position: relative;
+}
+
+.c-discussion-item__voting {
+  float: left;
+  left: 0;
+  padding-right: $base-line-height;
+  position: absolute;
+}
+
+.c-discussion-item__link {
+  text-decoration: none;
+}
+
+.c-discussion-item__title:hover {
+  color: color(primary);
+}

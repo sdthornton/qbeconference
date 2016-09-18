@@ -1,0 +1,29 @@
+.o-header {
+  @include clearfix;
+  background: white;
+  padding: 0 32px;
+}
+
+.o-header__logo {
+  float: left;
+  margin-top: 25px;
+}
+
+.o-main-nav__link {
+  border-radius: 2px;
+  color: color(gray-darker);
+  display: inline-block;
+  font-family: $font-monospace;
+  margin: $base-line-height 12px;
+  padding: 4px 10px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: color(gray-light);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

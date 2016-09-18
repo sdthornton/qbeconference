@@ -2,7 +2,7 @@ $font-sans-serif: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 $font-monospace: 'Inconsolata', monospace;
 
 $type-scale: (
-  -1: 0.75rem,
+  -1: 0.875rem,
   0: 1rem,
   1: 1.333rem,
   2: 1.777rem,
@@ -37,24 +37,27 @@ $margins: (
 $colors: (
   primary: #2962FF,
   accent: #32c96c,
-  alt: #C62828,
+  danger: #FFB300,
+  warning: #FFC107,
   black: #212121,
   gray-darker: #424242,
   gray-dark: #616161,
   gray-darkish: #757575,
   gray: #9E9E9E,
   gray-lightish: #BDBDBD,
-  gray-light: #E0E0E0,
+  gray-light: #E5E5E5,
   gray-lighter: #F5F5F5
 );
 
 $border-radius: 2px;
 
 $box-shadows: (
-  small: 0 3px 10px rgba(0,0,0,0.1),
-  normal: 0 5px 20px rgba(0,0,0,0.15),
-  wide: 0 10px 40px rgba(0,0,0,0.2),
-  xwide: 0 15px 60px rgba(0,0,0,0.25)
+  button: 0 2px 4px 0 rgba(0,0,0,.25),
+  button-hover: 0 4px 16px 0 rgba(0,0,0,0.25),
+  small: 0 3px 10px rgba(0,0,0,0.15),
+  normal: 0 5px 20px rgba(0,0,0,0.2),
+  wide: 0 10px 40px rgba(0,0,0,0.25),
+  xwide: 0 15px 60px rgba(0,0,0,0.30)
 );
 
 $transitions: (

@@ -1,0 +1,15 @@
+.c-or-line {
+  padding-top: 0.5rem;
+  position: relative;
+
+  &:after {
+    background: white;
+    color: color(gray-lightish);
+    content: "or";
+    padding: 0 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-25%);
+    top: 0;
+  }
+}

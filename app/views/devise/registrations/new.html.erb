@@ -1,0 +1,74 @@
+<section class="u-large-vertical-padding u-bg-light-gray">
+  <div class="o-container o-container--xsmall">
+    <div class="o-grid">
+      <div class="o-grid__cell o-grid__cell--12 u-text-center">
+        <h3 class="u-no-bottom-margin">Create an account,</h3>
+        <h5 class="c-sub-heading u-font-normal u-font-monospace">and join the discussion.</h5>
+
+        <div class="c-card c-card--no-shadow">
+          <%= render "devise/shared/sign-in-up-header" %>
+
+          <div class="c-card__content u-text-left">
+            <%= render "devise/shared/oauth" %>
+
+            <hr class="c-or-line u-double-push-down">
+
+            <%= form_for(
+              resource,
+              as: resource_name,
+              url: registration_path(resource_name),
+              html: { class: "c-form u-double-push-down" }
+            ) do |f| %>
+              <%= flash[:recaptcha_error] %>
+              <%= devise_error_messages! %>
+
+              <div class="c-form__group">
+                <%= f.label :email %>
+                <%= f.email_field :email, class: "c-form__control", autocapitalize: "off", autocorrect: "off", required: true %>
+                <small class="c-form__text u-text-gray">We promise to never sell or give away your info.</small>
+              </div>
+
+              <div class="c-form__group">
+                <%= f.label :password %>
+                <br />
+                <%= f.password_field :password, class: "c-form__control", autocomplete: "off", required: true, minlength: 6 %>
+                <small class="c-form__text u-text-gray">At least <%= @minimum_password_length %> characters &amp; 3 bars in strength.</small>
+                <div class="o-password-strength-wrap">
+                  <div id="password_strength" class="o-password-strength" data-strength="0">
+                    <div class="o-password-strength__indicator" data-value="1"></div>
+                    <div class="o-password-strength__indicator" data-value="2"></div>
+                    <div class="o-password-strength__indicator" data-value="3"></div>
+                    <div class="o-password-strength__indicator" data-value="4"></div>
+                    <div class="u-text-right u-font-monospace">
+                      <div class="o-password-strength__review" data-strength-text=""></div>
+                      <div class="o-password-strength__recommendations u-hide" data-tooltip="" title="">i</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="c-form__group">
+                <%= f.label :password_confirmation %>
+                <%= f.password_field :password_confirmation, class: "c-form__control", autocomplete: "off", required: true %>
+              </div>
+
+              <div class="c-form__group">
+                <label>Bot Stopper</label>
+                <%= recaptcha_tags %>
+                <small class="c-form__text u-text-gray">This helps ensure the discussion forum isn't full of spam.</small>
+              </div>
+
+              <div class="c-form__group">
+                <%= f.submit "Register", class: "c-button c-button--accent c-button--block" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  new QBE.Password();
+</script>
