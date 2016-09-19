@@ -1,1 +1,64 @@
-<h1>Contact</h1>
+<section class="u-large-vertical-padding">
+  <div class="o-container">
+    <div class="o-grid">
+      <div class="o-grid__cell o-grid__cell--5 u-push-down u-relative">
+        <h1>Contact Us</h1>
+        <h5 class="c-sub-heading u-font-normal u-font-monospace u-base-line-height">
+          Will you reach out to the team?
+        </h5>
+        <table class="u-double-push-down">
+          <tr>
+            <td>Email:&nbsp;&nbsp;</td>
+            <td>
+              <a
+                href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#097;&#105;&#108;&#064;&#113;&#117;&#101;&#115;&#116;&#105;&#111;&#110;&#098;&#101;&#104;&#097;&#118;&#105;&#111;&#114;&#046;&#111;&#114;&#103;"
+                style="unicode-bidi: bidi-override; direction: rtl;"
+              >
+                &#103;&#114;&#111;&#046;&#114;&#111;&#105;&#118;&#097;&#104;&#101;&#098;&#110;&#111;&#105;&#116;&#115;&#101;&#117;&#113;&#064;&#108;&#105;&#097;&#109;
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Twitter:&nbsp;&nbsp;</td>
+            <td><a href="https://twitter.com/qb_effect">@QB_Effect</a></td>
+        </table>
+      </div>
+      <div class="o-grid__cell o-grid__cell--10 o-grid__cell--pull-3">
+        <div class="c-card c-card--no-shadow">
+          <div class="c-card__content">
+            <div class="o-grid__cell o-grid__cell--10 o-grid__cell--offset-2">
+              <%= form_for @contact_form, html: { class: 'u-push-down' } do |f| %>
+                <%= flash[:recaptcha_error] %>
+
+                <% if user_signed_in? %>
+                  <%= f.hidden_field :email, value: current_user.email %>
+                <% else %>
+                  <div class="c-form__group">
+                    <%= f.label :email do %>
+                      Your email
+                    <% end %>
+                    <%= f.email_field :email, class: "c-form__control", autocapitalize: "off", autocorrect: "off", required: true %>
+                  </div>
+                <% end %>
+
+                <div class="c-form__group">
+                  <%= f.label :subject %>
+                  <%= f.text_field :subject, class: "c-form__control", required: true %>
+                </div>
+
+                <div class="c-form__group">
+                  <%= f.label :message %>
+                  <%= f.text_area :message, class: "c-form__control", rows: 8, required: true %>
+                </div>
+
+                <div class="c-form__group u-text-right u-double-push-down">
+                  <%= f.submit "Send a message", class: "c-button c-button--accent" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

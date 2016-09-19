@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'devise'
 gem 'devise_zxcvbn'
 gem 'recaptcha', require: 'recaptcha/rails'
@@ -35,6 +37,8 @@ gem 'omniauth-google-oauth2'
 gem 'friendly_id'
 
 gem 'closure_tree'
+
+gem 'mail_form'
 
 group :development do
   gem 'listen'

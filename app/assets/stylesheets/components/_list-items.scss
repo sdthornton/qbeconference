@@ -1,0 +1,12 @@
+.c-list-item {
+  color: color(black);
+  margin-bottom: $base-line-height;
+  text-decoration: none;
+}
+
+.c-list-item,
+.c-list-item__source { display: block; }
+
+td.c-list-item { margin-left: -1px; }
+
+.c-list-item__source { font-size: type-scale(-1); }

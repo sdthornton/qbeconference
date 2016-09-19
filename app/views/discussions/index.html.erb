@@ -4,14 +4,14 @@
       <div class="o-grid__cell o-grid__cell--8 u-relative">
         <h1 class="u-push-down">The Discussion</h1>
       </div>
-      <div class="o-grid__cell o-grid__cell--10 o-grid__cell--pull-6 u-double-push-down">
-        <div class="c-card c-card--no-shadow u-radius u-push-down">
-          <div class="c-card__content u-large-bottom-padding">
+      <div class="o-grid__cell o-grid__cell--10 o-grid__cell--pull-6">
+        <div class="c-card c-card--no-shadow u-radius">
+          <div class="c-card__content">
             <div class="u-push-down u-text-right">
               <%= link_to user_signed_in? ? "Add a new topic" : "Log in & add a new topic",
                     new_discussion_path, class: "c-button c-button--primary" %>
             </div>
-            <div class="c-discussion-items u-push-down">
+            <div class="c-discussion-items u-double-push-down">
               <% if @discussions.present? %>
                 <%= render @discussions %>
               <% else %>

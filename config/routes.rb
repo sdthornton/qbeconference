@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   get "/press-and-papers" => "press_and_papers#index"
 
   get "/contact" => "contact#index"
+  post "/contact" => "contact#new", as: "contact_forms"
 
 end

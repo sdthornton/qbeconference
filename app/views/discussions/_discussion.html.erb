@@ -6,7 +6,9 @@
   </div>
   <div class="c-discussion-item__content">
     <%= link_to discussion_path(discussion.slug), class: "c-discussion-item__link" do %>
-      <h5 class="c-discussion-item__title u-no-bottom-margin"><%= discussion.title %></h5>
+      <h5 class="c-discussion-item__title u-no-bottom-margin u-base-line-height">
+        <%= discussion.title %>
+      </h5>
     <% end %>
     <div class="c-discussion-item__info">
       <span><%= time_ago_in_words(discussion.created_at) %> ago</span> &nbsp;&bull;&nbsp;
