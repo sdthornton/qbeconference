@@ -1,0 +1,4 @@
+#press_content, #papers_content { display: block; }
+
+#press:target ~ #papers_content { display: none; }
+#papers:target ~ #press_content { display: none; }

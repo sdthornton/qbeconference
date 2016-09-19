@@ -9,6 +9,21 @@
       </div>
     </div>
 
+    <div id="all"></div>
+    <div id="press"></div>
+    <div id="papers"></div>
+
+    <div class="o-grid c-target-links u-push-down u-text-right">
+      <div class="o-grid__cell o-grid__cell--12">
+        <ul class="u-no-bottom-margin c-inline-list">
+          <li class="c-inline-list__item">Show me:</li>
+          <li class="c-inline-list__item"><a href="#all" data-turbolinks="false" data-target="all">Everything</a></li>
+          <li class="c-inline-list__item"><a href="#press" data-turbolinks="false" data-target="press">Press</a></li>
+          <li class="c-inline-list__item"><a href="#papers" data-turbolinks="false" data-target="papers">Papers</a></li>
+        </ul>
+      </div>
+    </div>
+
     <%= render partial: "press" %>
 
     <%= render partial: "papers" %>

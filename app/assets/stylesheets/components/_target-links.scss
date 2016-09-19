@@ -1,0 +1,11 @@
+[data-target="all"] { color: color(primary); }
+
+#press:target ~ .c-target-links {
+  [data-target="all"] { color: color(black); }
+  [data-target="press"] { color: color(primary); }
+}
+
+#papers:target ~ .c-target-links {
+  [data-target="all"] { color: color(black); }
+  [data-target="papers"] { color: color(primary); }
+}
