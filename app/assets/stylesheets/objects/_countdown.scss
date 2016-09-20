@@ -24,7 +24,7 @@
   }
 }
 
-.o-countdown__number--days:after { content: "Days"; }
-.o-countdown__number--hours:after { content: "Hours"; }
-.o-countdown__number--minutes:after { content: "Minutes"; }
-.o-countdown__number--seconds:after { content: "Seconds"; }
+[data-countdown="days"]:after { content: "Days"; }
+[data-countdown="hours"]:after { content: "Hours"; }
+[data-countdown="minutes"]:after { content: "Minutes"; }
+[data-countdown="seconds"]:after { content: "Seconds"; }

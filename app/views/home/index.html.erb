@@ -24,10 +24,10 @@
       <div class="o-grid__cell o-grid__cell--6 o-grid__cell--pull-2">
         <div class="v-home-roundtable c-xwide-shadow u-bg-white u-large-bottom-padding u-radius">
           <div class="o-countdown u-stretch-in-grid u-bg-light-gray">
-            <div class="o-countdown__number o-countdown__number--days">34</div>
-            <div class="o-countdown__number o-countdown__number--hours">08</div>
-            <div class="o-countdown__number o-countdown__number--minutes">21</div>
-            <div class="o-countdown__number o-countdown__number--seconds">55</div>
+            <div class="o-countdown__number" data-countdown="days"></div>
+            <div class="o-countdown__number" data-countdown="hours"></div>
+            <div class="o-countdown__number" data-countdown="minutes"></div>
+            <div class="o-countdown__number" data-countdown="seconds"></div>
           </div>
           <h2 class="u-no-bottom-margin u-push-down">The Roundtable</h2>
           <h5 class="c-sub-heading u-font-normal u-font-monospace">ACR, October 27, 2016</h5>
@@ -108,3 +108,7 @@
     </div>
   </div>
 </section>
+
+<% content_for :javascript do %>
+  new QBE.ACRCountdown();
+<% end %>
