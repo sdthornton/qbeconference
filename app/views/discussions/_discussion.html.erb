@@ -1,9 +1,9 @@
 <div class="c-discussion-item">
-  <div class="c-discussion-item__voting">
-    <%= link_to "&uarr;".html_safe, discussion_upvote_path(discussion.slug), class: 'vote' %><br>
+  <small class="c-discussion-item__voting u-text-center">
+    <%= link_to "", discussion_upvote_path(discussion.slug), class: 'vote icon-upvote u-no-decoration' %><br>
     <span class="vote-count u-font-monospace"><%= discussion.votes %></span><br>
-    <a href="#" class="vote">&darr;</a>
-  </div>
+    <a href="#" class="vote icon-downvote u-no-decoration"></a>
+  </small>
   <div class="c-discussion-item__content">
     <%= link_to discussion_path(discussion.slug), class: "c-discussion-item__link" do %>
       <h6 class="c-discussion-item__title u-no-bottom-margin u-base-line-height">

@@ -21,12 +21,13 @@
 }
 
 .c-button--sort {
+  font-family: $font-monospace-icon;
   margin: 0 2px;
   box-shadow: none;
   padding: 0.25rem 0.75rem;
 
   &:after {
-    content: "→";
+    content: "\e000";
     padding-left: 0.25*$base-line-height;
   }
 
@@ -36,11 +37,11 @@
 }
 
 [data-sort-order="descend"].c-button--primary:after {
-  content: "↑";
+  content: "\e001";
 }
 
 [data-sort-order="ascend"].c-button--primary:after {
-  content: "↓";
+  content: "\e002";
 }
 
 .c-button--primary { background: color(primary); }

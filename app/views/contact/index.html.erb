@@ -8,7 +8,7 @@
         </h5>
         <table class="u-double-push-down">
           <tr>
-            <td>Email:&nbsp;&nbsp;</td>
+            <td class="icon-mail">&nbsp;&nbsp;Email:&nbsp;&nbsp;</td>
             <td>
               <a
                 href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#097;&#105;&#108;&#064;&#113;&#117;&#101;&#115;&#116;&#105;&#111;&#110;&#098;&#101;&#104;&#097;&#118;&#105;&#111;&#114;&#046;&#111;&#114;&#103;"
@@ -19,7 +19,7 @@
             </td>
           </tr>
           <tr>
-            <td>Twitter:&nbsp;&nbsp;</td>
+            <td class="icon-twitter">&nbsp;&nbsp;Twitter:&nbsp;&nbsp;</td>
             <td><a href="https://twitter.com/qb_effect">@QB_Effect</a></td>
         </table>
       </div>
@@ -52,7 +52,9 @@
                 </div>
 
                 <div class="c-form__group u-text-right">
-                  <%= f.submit "Send a message", class: "c-button c-button--accent" %>
+                  <button type="submit" class="c-button c-button--accent icon-send">
+                    &nbsp;&nbsp;Send a message
+                  </button>
                 </div>
               <% end %>
             </div>
