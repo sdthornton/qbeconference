@@ -2,8 +2,10 @@
   background: white;
   border-radius: $border-radius;
   box-shadow: map-get($box-shadows, small);
+  display: block;
   margin-bottom: $base-line-height;
   overflow: hidden;
+  text-decoration: none;
   transition: map-get($transitions, simple);
 
   &:hover {
@@ -22,6 +24,7 @@
 }
 
 .c-card__content {
+  display: block;
   padding: $base-line-height;
   padding-top: 0.5*$base-line-height;
 }
@@ -36,6 +39,7 @@
 .c-card__ref {
   color: color(gray-dark);
   font-family: $font-monospace;
+  text-decoration: underline;
 
   &:active,
   &:visited,

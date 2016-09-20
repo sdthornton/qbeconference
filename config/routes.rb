@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     post "downvote" => "discussions#downvote", as: "downvote"
   end
 
+  get "/the-qbe" => "the_qbe#index"
+
   get "/press-and-papers" => "press_and_papers#index"
 
   get "/contact" => "contact#index"

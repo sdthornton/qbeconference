@@ -3,7 +3,7 @@
     <%= image_tag "qbe-logo.svg", height: "36", class: "o-header__logo" %>
   </a>
   <nav class="o-main-nav u-text-right">
-    <a href class="o-main-nav__link">The QBE</a>
+    <%= link_to "The QBE", root_path, class: "o-main-nav__link" %>
     <%= link_to "Press & Papers", press_and_papers_path, class: "o-main-nav__link" %>
     <a href="http://acrweb.org/acr/conference/program.aspx" class="o-main-nav__link" target="_blank">
       ACR & Roundtable

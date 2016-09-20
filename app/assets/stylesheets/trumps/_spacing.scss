@@ -4,6 +4,8 @@
 .u-no-margin { margin: 0 !important; }
 .u-no-bottom-margin { margin-bottom: 0 !important; }
 
+.u-bottom-padding { padding-bottom: $base-line-height; }
+
 .u-large-padding { padding: 2*$base-line-height 64px; }
 .u-large-bottom-padding { padding-bottom: 2*$base-line-height; }
 .u-large-vertical-padding {

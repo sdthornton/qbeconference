@@ -32,7 +32,10 @@
           <h2 class="u-no-bottom-margin u-push-down">The Roundtable</h2>
           <h5 class="c-sub-heading u-font-normal u-font-monospace">ACR, October 27, 2016</h5>
           <p>Join us as we challenge theoretical perspectives and facilitate further collaboration on the question-behavior effect.</p>
-          <button class="c-button c-button--accent u-push-down">Join Us in Berlin</button>
+          <a
+            href="http://www.acrweb.org/acr/Public/index.aspx" target="_blank"
+            class="c-button c-button--accent u-display-inline-block u-push-down"
+          >Join Us in Berlin</a>
         </div>
       </div>
     </div>
@@ -44,55 +47,64 @@
         <p>For 40 years, consumer psychologists have explored the nature of the question-behavior effect. A <a href="">new meta-analysis of the effect</a> finds varying support for four over-arching theoretical mechanisms: attitudes, consistency, fluency, &amp; motivations.</p>
         <p>In brief, the question-behavior effect is a behavioral influence technique whereby asking someone about the future performance of a behavior changes the likelihood of that person performing the questioned behavior in the future.</p>
       </div>
-      <!-- <div class="o-grid__cell o-grid__cell--6" style="margin-top: -12rem;">
-        <img src="https://images.unsplash.com/photo-1464128549965-cd1abc417a4a?dpr=2&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=1500&amp;h=1124&amp;q=80&amp;cs=tinysrgb">
-      </div> -->
     </div>
   </div>
 </section>
 
 <section class="u-bg-white u-large-vertical-padding">
   <div class="o-container u-push-down">
-    <div class="o-grid o-grid--small-padding">
+    <div class="o-grid">
+      <h1 class="o-grid__cell o-grid__cell--12">Recent Talk</h1>
+    </div>
+    <div class="o-grid o-grid--small-padding u-push-down">
       <div class="o-grid__cell o-grid__cell--3">
-        <div class="c-card u-bg-light-gray">
-          <img class="c-card__image" src="http://img.huffingtonpost.com/asset/scalefit_620_noupscale/5685480b190000190178adf9.jpeg">
-          <div class="c-card__content">
-            <div class="c-card__category">Press</div>
+        <a
+          href="http://www.huffingtonpost.com/entry/psychology-new-years-resolutions_us_5683e286e4b0b958f65ad409"
+          class="c-card u-bg-light-gray" target="_blank"
+        >
+          <img class="c-card__image" src="https://images.unsplash.com/photo-1431578409060-9aad91ba5f79?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb">
+          <span class="c-card__content">
+            <span class="c-card__category">Press</span>
             <p class="u-font-bold u-font-sans-serif">Everything you need to know about making new year's resolutions</p>
-            <a href="#" class="c-card__ref">Huffington Post</a>
-          </div>
-        </div>
+            <span href="#" class="c-card__ref">Huffington Post</span>
+          </span>
+        </a>
       </div>
       <div class="o-grid__cell o-grid__cell--3">
-        <div class="c-card u-bg-light-gray">
-          <img class="c-card__image" src="http://img.huffingtonpost.com/asset/scalefit_620_noupscale/56855e031600000001eb9d1d.jpeg">
-          <div class="c-card__content">
-            <div class="c-card__category">Paper</div>
+        <a
+          href="http://www.cbsnews.com/news/how-to-motivate-others-to-stick-with-new-years-resolutions/"
+          class="c-card u-bg-light-gray" target="_blank"
+        >
+          <img class="c-card__image" src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1500&q=80&cs=tinysrgb">
+          <span class="c-card__content">
+            <span class="c-card__category">Press</span>
+            <p class="u-font-bold u-font-sans-serif">How to make New Year's resolutions stick? Ask, don't tell</p>
+            <span href="#" class="c-card__ref">CBS News</span>
+          </span>
+        </a>
+      </div>
+      <div class="o-grid__cell o-grid__cell--3">
+        <a
+          href="http://www.sciencedirect.com/science/article/pii/S1057740815001102"
+          class="c-card u-bg-light-gray" target="_blank"
+        >
+          <img class="c-card__image" src="https://images.unsplash.com/photo-1461838432805-dff34fe2d8cb?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb">
+          <span class="c-card__content">
+            <span class="c-card__category">Paper</span>
             <p class="u-font-bold u-font-sans-serif">A Meta-Analytic Synthesis of the Question-Behavior Effect</p>
-            <a href="#" class="c-card__ref">SSRN</a>
-          </div>
-        </div>
+            <span href="#" class="c-card__ref">Journal of Consumer Psychology</span>
+          </span>
+        </a>
       </div>
       <div class="o-grid__cell o-grid__cell--3">
-        <div class="c-card u-bg-primary u-text-white">
-          <div class="c-card__content">
+        <%= link_to discussions_path, class: "c-card u-bg-primary u-text-white" do %>
+          <span class="c-card__content">
             <h3 class="u-text-white u-push-down">Join the Discussion</h3>
             <p>Add your voice to the ongoing discussion and discovery.</p>
-            <br><br><br>
-          </div>
-        </div>
+          </span>
+        <% end %>
       </div>
-      <div class="o-grid__cell o-grid__cell--3">
-        <div class="c-card u-bg-light-gray">
-          <img class="c-card__image" src="http://cbsnews1.cbsistatic.com/hub/i/r/2015/04/08/606c59e6-0f98-43c2-9800-c5f9dce0cab3/thumbnail/620x350/221d59b75881262079152ab0061cc325/exercise.jpg">
-          <div class="c-card__content">
-            <div class="c-card__category">Press</div>
-            <p class="u-font-bold u-font-sans-serif">How to make New Year's resolutions stick? Ask, don't tell</p>
-            <a href="#" class="c-card__ref">CBS News</a>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>

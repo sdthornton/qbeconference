@@ -1,2 +1,46 @@
-<footer id="site_footer" class="u-bg-black" style="height: 12rem;" data-turbolinks-permanent>
+<footer id="site_footer" class="u-bg-black" data-turbolinks-permanent>
+  <div class="o-container u-large-vertical-padding">
+    <div class="o-grid o-grid--small-padding u-push-down u-bottom-padding">
+      <div class="o-grid__cell o-grid__cell--2">
+        <h6 class="u-text-white u-text-right">The<br>Question-<br>Behavior<br>Effect</h5>
+      </div>
+      <div class="o-grid__cell o-grid__cell--2 o-grid__cell--offset-1 u-font-monospace">
+        <%= link_to "The QBE", root_path, class: "u-text-white u-display-block" %>
+        <%= link_to "Press & Papers", press_and_papers_path, class: "u-text-white u-display-block u-push-down" %>
+        <a href="http://acrweb.org/acr/conference/program.aspx" class="u-text-white u-display-block u-push-down" target="_blank">
+          ACR & Roundtable
+        </a>
+      </div>
+      <div class="o-grid__cell o-grid__cell--2 u-font-monospace">
+        <%= link_to "Discussion", discussions_path, class: "u-text-white u-display-block" %>
+        <%= link_to "Contact", contact_path, class: "u-text-white u-display-block u-push-down" %>
+        <% if user_signed_in? %>
+          <%= link_to "Log in", login_path, class: "u-text-white u-display-block u-push-down" %>
+          <%= link_to "Register", register_path, class: "u-text-white u-display-block u-push-down" %>
+        <% end %>
+      </div>
+      <div class="o-grid__cell o-grid__cell--2 o-grid__cell--offset-3 u-text-right u-font-monospace">
+        <a
+          href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#097;&#105;&#108;&#064;&#113;&#117;&#101;&#115;&#116;&#105;&#111;&#110;&#098;&#101;&#104;&#097;&#118;&#105;&#111;&#114;&#046;&#111;&#114;&#103;"
+          class="u-text-white u-display-block u-no-decoration"
+          style="unicode-bidi: bidi-override; direction: rtl;"
+        >
+          &#103;&#114;&#111;&#046;&#114;&#111;&#105;&#118;&#097;&#104;&#101;&#098;&#110;&#111;&#105;&#116;&#115;&#101;&#117;&#113;&#064;&#108;&#105;&#097;&#109;
+        </a>
+        <a
+          href="https://twitter.com/qb_effect" target="_blank"
+          class="u-text-white u-display-block u-push-down u-no-decoration"
+        >@QB_Effect</a>
+      </div>
+    </div>
+  </div>
+  <div class="u-text-white u-text-right">
+    <div class="o-container">
+      <div class="o-grid">
+        <div class="o-grid__cell o-grid__cell--12">
+          <p class="u-push-down">&copy; Copyright 2016, Washington State University</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>

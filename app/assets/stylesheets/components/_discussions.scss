@@ -28,3 +28,7 @@
 .c-discussion-item__title:hover {
   color: color(primary);
 }
+
+.c-discussion-item__info {
+  @include type-setting(-1, false);
+}
