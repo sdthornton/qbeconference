@@ -1,8 +1,8 @@
 window.QBE = window.QBE || {};
 QBE.Voting = class Voting {
   constructor() {
-    this.vote = $('.vote');
-    this.vote.off('.vote').on('click.vote', e => this.onVote(e));
+    this.vote = $('.js-vote');
+    this.vote.off('.js-vote').on('click.vote', e => this.onVote(e));
   }
 
   onVote(e) {
@@ -13,7 +13,7 @@ QBE.Voting = class Voting {
       type: 'POST',
       dataType: 'json'
     }).done((data) => {
-      let $voteCount = $(target).parent().find('.vote-count');
+      let $voteCount = $(target).parent().find('.js-vote-count');
       $voteCount.text(data.value);
     });
   }

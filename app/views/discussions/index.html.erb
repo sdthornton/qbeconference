@@ -1,17 +1,17 @@
 <section class="u-large-vertical-padding">
   <div class="o-container">
     <div class="o-grid">
-      <div class="o-grid__cell o-grid__cell--8 u-relative">
+      <div class="o-grid__cell o-grid__cell--4 u-relative">
         <h1 class="u-push-down">The Discussion</h1>
+        <div class="u-double-push-down">
+          <%= link_to user_signed_in? ? "Add a new topic" : "Log in & add a new topic",
+              new_discussion_path, class: "c-button c-button--primary" %>
+        </div>
       </div>
-      <div class="o-grid__cell o-grid__cell--10 o-grid__cell--pull-6">
+      <div class="o-grid__cell o-grid__cell--8">
         <div class="c-card c-card--no-shadow u-radius">
           <div class="c-card__content">
-            <div class="u-push-down u-text-right">
-              <%= link_to user_signed_in? ? "Add a new topic" : "Log in & add a new topic",
-                    new_discussion_path, class: "c-button c-button--primary" %>
-            </div>
-            <div class="c-discussion-items u-double-push-down">
+            <div class="c-discussion-items">
               <% if @discussions.present? %>
                 <%= render @discussions %>
               <% else %>

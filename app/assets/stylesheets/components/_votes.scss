@@ -1,0 +1,19 @@
+.c-vote--downvote-tip:after {
+  bottom: auto;
+  border-radius: $border-radius;
+  font-family: $font-monospace;
+  line-height: 1.5;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  top: 50%;
+  white-space: normal;
+  width: 256px;
+}
+
+.c-vote--downvote-tip:hover:after {
+  -webkit-transform: translate(8px,-50%);
+  transform: translate(8px,-50%);
+}
+
+.c-vote.c-vote--upvote:hover { color: color(accent); }
+.c-vote.c-vote--downvote:hover { color: color(danger); }

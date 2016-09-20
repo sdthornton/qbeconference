@@ -38,20 +38,13 @@ QBE.Password = class Password {
         recommendationText += `${this.passwordWarning}. `;
       }
 
-      this.passwordRecsNode.title = (() => {
+      this.passwordRecsNode.setAttribute('aria-label', (() => {
         this.passwordRecommendations.forEach((recommendation) => {
           recommendationText += `${recommendation.replace(/\.$/, '')}. `;
         });
         return recommendationText;
-      }());
+      }()));
 
-      this.passwordRecsNode.dataset.tooltip = (() => {
-        let recommendationMarkup = "<ul>";
-        this.passwordRecommendations.forEach((recommendation) => {
-          recommendationMarkup += `<li>${recommendation}</li>`;
-        });
-        return `${recommendationMarkup}</ul>`;
-      }());
     } else {
       this.passwordRecsNode.classList.add('u-hide');
     }

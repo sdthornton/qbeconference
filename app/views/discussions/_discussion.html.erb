@@ -1,8 +1,10 @@
 <div class="c-discussion-item">
   <small class="c-discussion-item__voting u-text-center">
-    <%= link_to "", discussion_upvote_path(discussion.slug), class: 'vote icon-upvote u-no-decoration' %><br>
-    <span class="vote-count u-font-monospace"><%= discussion.votes %></span><br>
-    <a href="#" class="vote icon-downvote u-no-decoration"></a>
+    <%= link_to "", discussion_upvote_path(discussion.slug), class: 'js-vote c-vote c-vote--upvote icon-upvote u-no-decoration' %><br>
+    <span class="js-vote-count u-font-monospace"><%= discussion.votes %></span><br>
+    <span class="hint--right c-vote--downvote-tip" aria-label="This is not a dislike button. Downvote when a topic is unhelpful, poorly written, or innappropriate.">
+      <a href="#" class="icon-downvote c-vote c-vote--downvote u-no-decoration"></a>
+    </span>
   </small>
   <div class="c-discussion-item__content">
     <%= link_to discussion_path(discussion.slug), class: "c-discussion-item__link" do %>
