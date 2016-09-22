@@ -7,8 +7,13 @@ QBE.Comment = class Comment {
 
       let $target = $(e.currentTarget);
       $target.next().toggleClass('u-hide');
-      $target.find('.icon-arrow-right').removeClass('icon-arrow-right').addClass('icon-arrow-down');
-      $target.find('.icon-arrow-down').removeClass('icon-arrow-down').addClass('icon-arrow-right');
+
+      let $rightArrow = $target.find('.icon-arrow-right');
+      if ($rightArrow.length) {
+        $rightArrow.removeClass('icon-arrow-right').addClass('icon-arrow-down');
+      } else {
+        $target.find('.icon-arrow-down').removeClass('icon-arrow-down').addClass('icon-arrow-right');
+      }
     });
   }
 }
