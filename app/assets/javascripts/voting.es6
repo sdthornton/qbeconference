@@ -8,12 +8,18 @@ QBE.Voting = class Voting {
   onVote(e) {
     e.preventDefault();
     let target = e.target;
+
     $.ajax({
       url: target.href,
       type: 'POST',
       dataType: 'json'
     }).done((data) => {
-      let $voteCount = $(target).parent().find('.js-vote-count');
+      let $target = $(target);
+      let $parent = $target.parents('.c-discussion-item__voting');
+      let $voteCount = $parent.find('.js-vote-count');
+
+      $parent.find('.c-vote--chosen').removeClass('c-vote--chosen');
+      $target.addClass('c-vote--chosen');
       $voteCount.text(data.value);
     });
   }

@@ -3,12 +3,12 @@
     <% if "#{provider}" == "google_oauth2" %>
       <%= link_to omniauth_authorize_path(resource_name, provider), class: "c-button c-button--block c-oauth-button c-oauth-button--google u-text-dark-gray u-display-block u-text-center u-push-down" do %>
         <%= image_tag "google.svg", class: "c-button__image" %>
-        Sign <%= controller_name == 'registrations' ? 'up' : 'in' %> with Google
+        <%= controller_name == 'registrations' ? 'Sign up' : 'Log in' %> with Google
       <% end %>
     <% elsif "#{provider}" == "linkedin" %>
       <%= link_to omniauth_authorize_path(resource_name, provider), class: "c-button c-button--block c-oauth-button c-oauth-button--linkedin u-text-white u-display-block u-text-center u-push-down" do %>
         <%= image_tag "linkedin.svg", class: "c-button__image" %>
-        Sign <%= controller_name == 'registrations' ? 'up' : 'in' %> with LinkedIn
+        <%= controller_name == 'registrations' ? 'Sign up' : 'Log in' %> with LinkedIn
       <% end %>
     <% end %>
   <% end -%>

@@ -1,21 +1,24 @@
 <section class="u-large-vertical-padding">
-  <div class="o-container">
-    <div class="o-grid">
+  <div class="o-container u-bottom-padding">
+    <div class="o-grid o-grid--small-padding">
       <div class="o-grid__cell o-grid__cell--4 u-relative">
-        <h1 class="u-push-down">The Discussion</h1>
+        <h1>The QBE Discussion</h1>
+        <h6 class="c-sub-heading u-font-normal u-font-monospace u-base-line-height">
+          Will you join the conversation?
+        </h6>
         <div class="u-double-push-down">
-          <%= link_to user_signed_in? ? "Add a new topic" : "Log in & add a new topic",
+          <%= link_to user_signed_in? ? "Add a new topic" : "Log in & add a topic",
               new_discussion_path, class: "c-button c-button--primary" %>
         </div>
       </div>
-      <div class="o-grid__cell o-grid__cell--8">
+      <div class="o-grid__cell o-grid__cell--8 u-push-down">
         <div class="c-card c-card--no-shadow u-radius">
           <div class="c-card__content">
-            <div class="c-discussion-items">
+            <div class="c-discussion-items u-relative">
               <% if @discussions.present? %>
                 <%= render @discussions %>
               <% else %>
-                <p>
+                <p class="u-double-push-down">
                   Looks like no one has added a topic yet. How about
                   <%= link_to "starting the conversation", new_discussion_path %>?
                 </p>

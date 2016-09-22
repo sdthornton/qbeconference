@@ -1,12 +1,37 @@
-<div>
-  <%= comment.content %><br>
-  <%= comment.user.name %>
-  <% if user_signed_in? && comment.depth < 5 %>
-    <%= form_for([@discussion, @new_comment]) do |f| %>
-      <%= f.hidden_field :parent_id, value: comment.id %>
-      <%= f.text_field :content %>
-      <%= f.submit %>
+<div class="o-comment__info u-text-gray u-font-monospace">
+  <small>
+    <%= comment.created_by %> &bull;
+    <!-- <%= comment.votes %> points &bull;  -->
+    <%= time_ago_in_words(comment.created_at) %> ago
+  </small>
+</div>
+<div class="o-comment__content">
+  <%= markdown(comment.content) %>
+</div>
+<div class="o-comment__respond u-font-monospace u-text-gray">
+  <small>
+    <!-- <a href="#" class="icon-upvote u-text-gray u-no-decoration"></a>
+    <a href="#" class="icon-downvote u-text-gray u-no-decoration"></a>
+    &bull; -->
+  </small>
+  <% if user_signed_in? %>
+    <% if comment.depth < 5 %>
+      <a href="#" class="js-comment-toggle u-no-decoration v-comments__reply-link"><small>Reply</small></a>
+      <%= form_for([@discussion, @new_comment], html: { class: "u-font-sans-serif c-form--comment u-hide u-push-down" }) do |f| %>
+        <%= f.hidden_field :parent_id, value: comment.id %>
+        <div class="c-form__group">
+          <%= f.text_area :content, class: "c-form__control", rows: 4 %>
+        </div>
+        <div class="c-form__group">
+          <button type="submit" class="c-button c-button--accent c-button--small">
+            Post your reply
+          </button>
+        </div>
+      <% end %>
     <% end %>
+  <% else %>
+    <small>
+      <%= link_to "Reply", login_path, class: "u-no-decoration v-comments__reply-link" %>
+    </small>
   <% end %>
 </div>
-<hr>

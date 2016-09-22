@@ -15,5 +15,15 @@
   transform: translate(8px,-50%);
 }
 
-.c-vote.c-vote--upvote:hover { color: color(accent); }
-.c-vote.c-vote--downvote:hover { color: color(danger); }
+.c-vote--chosen {
+  cursor: default;
+  pointer-events: none;
+}
+
+.c-vote.c-vote--upvote {
+  &.c-vote--chosen, &:hover { color: color(accent); }
+}
+
+.c-vote.c-vote--downvote {
+  &.c-vote--chosen, &:hover { color: color(danger); }
+}

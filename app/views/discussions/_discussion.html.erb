@@ -1,10 +1,22 @@
 <div class="c-discussion-item">
   <small class="c-discussion-item__voting u-text-center">
-    <%= link_to "", discussion_upvote_path(discussion.slug), class: 'js-vote c-vote c-vote--upvote icon-upvote u-no-decoration' %><br>
-    <span class="js-vote-count u-font-monospace"><%= discussion.votes %></span><br>
-    <span class="hint--right c-vote--downvote-tip" aria-label="This is not a dislike button. Downvote when a topic is unhelpful, poorly written, or innappropriate.">
-      <a href="#" class="icon-downvote c-vote c-vote--downvote u-no-decoration"></a>
-    </span>
+    <% if user_signed_in? %>
+      <%= link_to "",
+          discussion_upvote_path(discussion.slug),
+          class: "js-vote c-vote c-vote--upvote icon-upvote u-no-decoration
+                  #{'c-vote--chosen' if user_signed_in? && discussion.current_user_vote == 1}" %><br>
+      <span class="js-vote-count u-font-monospace"><%= discussion.votes %></span><br>
+      <span class="hint--right c-vote--downvote-tip" aria-label="This is not a dislike button. Downvote when a topic is unhelpful, poorly written, or innappropriate.">
+        <%= link_to "",
+            discussion_downvote_path(discussion.slug),
+            class: "js-vote c-vote c-vote--downvote icon-downvote u-no-decoration
+                    #{'c-vote--chosen' if user_signed_in? && discussion.current_user_vote == -1}" %>
+      </span>
+    <% else %>
+      <%= link_to "", login_path, class: "c-vote c-vote--upvote icon-upvote u-no-decoration" %><br>
+      <span class="js-vote-count u-font-monospace"><%= discussion.votes %></span><br>
+      <%= link_to "", login_path, class: "c-vote c-vote--downvote icon-downvote u-no-decoration" %>
+    <% end %>
   </small>
   <div class="c-discussion-item__content">
     <%= link_to discussion_path(discussion.slug), class: "c-discussion-item__link" do %>

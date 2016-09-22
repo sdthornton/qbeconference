@@ -1,0 +1,9 @@
+.v-comments { overflow: hidden; }
+
+.v-comments__reply-link {
+  color: color(gray);
+
+  &:hover {
+    color: color(primary);
+  }
+}

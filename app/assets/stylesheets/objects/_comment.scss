@@ -1,0 +1,39 @@
+.o-comment {
+  @include clearfix;
+  margin: $base-line-height 0;
+  padding: $base-line-height 0.5*$base-line-height 0.5*$base-line-height $base-line-height;
+
+  .o-comment {
+    margin-bottom: 0;
+  }
+
+  &:target {
+    border: 1px solid color(primary);
+  }
+}
+
+.o-comment,
+.o-comment .o-comment .o-comment,
+.o-comment .o-comment .o-comment .o-comment .o-comment {
+  background: white;
+}
+
+.o-comment .o-comment,
+.o-comment .o-comment .o-comment .o-comment,
+.o-comment .o-comment .o-comment .o-comment .o-comment .o-comment {
+  background: color(gray-lighter);
+}
+
+.o-comment__info {
+  margin-bottom: 0.5rem;
+}
+
+.o-comment__content p:last-child,
+.o-comment__content ul:last-child,
+.o-comment__content ol:last-child {
+  margin-bottom: 0;
+}
+
+.o-comment__respond {
+  margin-top: 0.5rem;
+}

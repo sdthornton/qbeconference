@@ -36,12 +36,17 @@
   }
 }
 
+.c-button--small {
+  font-size: map-get($type-scale, -1);
+  padding: 0.5rem 1rem;
+}
+
 [data-sort-order="descend"].c-button--primary:after {
-  content: "\e001";
+  content: "\e002";
 }
 
 [data-sort-order="ascend"].c-button--primary:after {
-  content: "\e002";
+  content: "\e001";
 }
 
 .c-button--primary { background: color(primary); }

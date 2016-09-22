@@ -10,9 +10,11 @@
     </a>
     <%= link_to "Discussion", discussions_path, class: "o-main-nav__link" %>
     <%= link_to "Contact", contact_path, class: "o-main-nav__link" %>
+    <span class="o-main-nav__separator"></span>
     <% if user_signed_in? %>
       <%= link_to "Log Out", logout_path, class: "o-main-nav__link", method: :delete %>
     <% else %>
-      <%= link_to "Log in", login_path, class: "o-main-nav__link o-main-nav__link--sign-up u-text-white u-bg-primary" %>
+      <%= link_to "Login", login_path, class: "o-main-nav__link" %>
+      <%= link_to "Register", register_path, class: "o-main-nav__link o-main-nav__link--sign-up u-text-white u-bg-primary" %>
     <% end %>
 </header>

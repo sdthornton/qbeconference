@@ -14,7 +14,7 @@
       <div class="o-grid__cell o-grid__cell--2 u-font-monospace">
         <%= link_to "Discussion", discussions_path, class: "u-text-white u-display-block" %>
         <%= link_to "Contact", contact_path, class: "u-text-white u-display-block u-push-down" %>
-        <% if user_signed_in? %>
+        <% if !user_signed_in? %>
           <%= link_to "Log in", login_path, class: "u-text-white u-display-block u-push-down" %>
           <%= link_to "Register", register_path, class: "u-text-white u-display-block u-push-down" %>
         <% end %>
@@ -38,7 +38,10 @@
     <div class="o-container">
       <div class="o-grid">
         <div class="o-grid__cell o-grid__cell--12">
-          <p class="u-push-down">&copy; Copyright 2016, Washington State University</p>
+          <p class="u-push-down">
+            &copy; Copyright 2016, Washington State University<br>
+            <small class="u-text-gray">Special thanks to reddit.com for the discussion model used on this site</small>
+          </p>
         </div>
       </div>
     </div>

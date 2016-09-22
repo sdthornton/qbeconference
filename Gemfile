@@ -40,6 +40,8 @@ gem 'closure_tree'
 
 gem 'mail_form'
 
+gem 'redcarpet'
+
 group :development do
   gem 'listen'
 end

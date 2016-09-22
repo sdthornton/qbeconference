@@ -8,15 +8,11 @@ class Discussion < ApplicationRecord
 
   validates :title, :content, presence: true
 
-  before_create do
-    self.votes = 1
+  before_save do
+    self.created_by = user.name
   end
 
   def slugify
     [:title]
-  end
-
-  def created_by
-    try(:user_name) ? user_name : user.name
   end
 end

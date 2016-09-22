@@ -1,24 +1,82 @@
-<article>
-  <h1><%= @discussion.title %></h1>
-  <div><%= @discussion.content %></div>
-  <hr>
+<article class="c-discussion-article">
+  <div class="o-container o-container--small u-double-push-down">
+    <div class="o-grid">
+      <div class="o-grid__cell o-grid__cell--12">
+        <div class="c-discussion-item__voting u-text-center">
+          <% if user_signed_in? %>
+            <%= link_to "",
+                discussion_upvote_path(@discussion.slug),
+                class: "js-vote c-vote c-vote--upvote icon-upvote u-no-decoration
+                        #{'c-vote--chosen' if user_signed_in? && @discussion.current_user_vote == 1}" %><br>
+            <span class="js-vote-count u-font-monospace"><%= @discussion.votes %></span><br>
+            <span class="hint--right c-vote--downvote-tip" aria-label="This is not a dislike button. Downvote when a topic is unhelpful, poorly written, or innappropriate.">
+              <%= link_to "",
+                  discussion_downvote_path(@discussion.slug),
+                  class: "js-vote c-vote c-vote--downvote icon-downvote u-no-decoration
+                          #{'c-vote--chosen' if user_signed_in? && @discussion.current_user_vote == -1}" %>
+            </span>
+          <% else %>
+            <%= link_to "", login_path, class: "c-vote c-vote--upvote icon-upvote u-no-decoration" %><br>
+            <span class="js-vote-count u-font-monospace"><%= @discussion.votes %></span><br>
+            <%= link_to "", login_path, class: "c-vote c-vote--downvote icon-downvote u-no-decoration" %>
+          <% end %>
+        </div>
+        <h5 class="u-base-line-height u-no-bottom-margin"><%= @discussion.title %></h5>
+        <div class="u-font-monospace u-text-gray">
+          <small>
+            Submitted <%= time_ago_in_words(@discussion.created_at) %> ago
+            by <%= @discussion.created_by %>
+          </small>
+        </div>
+        <div class="u-push-down"><%= markdown(@discussion.content) %></div>
+      </div>
+    </div>
+    <hr class="u-push-down">
+  </div>
 </article>
-<br>
-<% if user_signed_in? %>
-  <%= form_for([@discussion, @new_comment]) do |f| %>
-    <% if @new_comment.errors.any? %>
-      <ul>
-        <% @new_comment.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
 
-    <%= f.text_field :content %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
-<br>
-<section id="comments">
-  <%= comments_tree_for @comments %>
+<section id="comments" class="u-large-bottom-padding v-comments">
+  <div class="o-container o-container--small u-push-down">
+    <div class="o-grid">
+      <div class="o-grid__cell o-grid__cell--12">
+        <h6 class="u-no-bottom-margin"><%= pluralize(@discussion.comments_count, "Comment") %></h6>
+        <% if user_signed_in? %>
+          <%= form_for([@discussion, @new_comment], html: { class: "c-form--comment" }) do |f| %>
+            <a href="#" class="js-comment-toggle u-no-decoration">
+              <small>
+                <span class="u-underline">Leave a comment</span>
+                <i class="icon-arrow-right"></i>
+              </small>
+            </a>
+            <div class="c-card c-card--no-shadow c-card--comment u-hide">
+              <div class="c-card__content">
+                <div class="c-form__group">
+                  <%= f.text_area :content, rows: 4, class: "c-form__control", required: true %>
+                </div>
+                <div class="c-form__group u-no-bottom-margin">
+                  <button type="submit" class="c-button c-button--accent c-button--small">
+                    Post your comment
+                  </button>
+                  <button type="button" class="c-button c-button--small u-float-right">
+                    Formatting help <i class="icon-arrow-down"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <small>
+            <%= link_to "Log in", login_path %> or <%= link_to "register", register_path %> to leave a comment.
+          </small>
+        <% end %>
+
+        <%= comments_tree_for @comments %>
+      </div>
+    </div>
+  <div>
 </section>
+
+<% content_for :javascript do %>
+  new QBE.Voting();
+  new QBE.Comment();
+<% end %>

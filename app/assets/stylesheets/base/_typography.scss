@@ -16,10 +16,12 @@ h4, h5, h6 { font-weight: 700; }
 
 h1, h2, h3, h4, h5, h6 { color: color(black); }
 
-p {
+p, ul {
   font-family: $font-monospace;
   margin: 0 0 margin(1);
 }
+
+ul { padding-left: $base-line-height; }
 
 a {
   color: color(black);

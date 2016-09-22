@@ -13,6 +13,11 @@
   }
 }
 
+.c-card--comment {
+  margin-top: 0.25*$base-line-height;
+  padding-top: 0.5*$base-line-height;
+}
+
 .c-card--no-shadow,
 .c-card--no-shadow:hover {
   box-shadow: none;

@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
       flash[:error] = "Something went wrong"
     end
 
-    redirect_to discussion_path(discussion)
+    redirect_to discussion_path(discussion, anchor: @comment.created_at.to_i)
   end
 
   def destroy

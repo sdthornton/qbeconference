@@ -14,8 +14,8 @@
   color: color(gray-darker);
   display: inline-block;
   font-family: $font-monospace;
-  margin: $base-line-height 12px;
-  padding: 4px 10px;
+  margin: $base-line-height 0.375*$base-line-height;
+  padding: 0.25rem 0.5rem;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
 
@@ -26,4 +26,10 @@
   &:last-child {
     margin-right: 0;
   }
+}
+
+.o-main-nav__separator {
+  border-left: 1px solid color(gray-light);
+  margin: $base-line-height (0.375*$base-line-height + 0.5rem);
+  padding: 0.25rem 0;
 }
