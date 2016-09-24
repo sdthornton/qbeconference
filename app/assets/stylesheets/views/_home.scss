@@ -1,8 +1,12 @@
 .v-home-banner {
-  background: url('https://images.unsplash.com/photo-1462743708072-4ed3a4a860be?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1928&q=80&cs=tinysrgb') center center no-repeat;
+  background: image-url('banner-large.jpeg') center center no-repeat;
   background-size: cover;
   padding: $base-line-height*3 0;
   position: relative;
+
+  @media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+    background-image: image-url('banner-large@2x.jpeg');
+  }
 
   &:before {
     background: #212121;

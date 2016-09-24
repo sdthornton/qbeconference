@@ -18,7 +18,11 @@
   <div class="o-container v-home-roundtable-container">
     <div class="o-grid">
       <div class="o-grid__cell o-grid__cell--8 u-double-push-down">
-        <div class="v-home-question-image__img u-push-down"></div>
+        <img
+          class="u-push-down"
+          src="<%= image_path('question.jpeg') %>"
+          title="Ask more questions."
+        >
       </div>
 
       <div class="o-grid__cell o-grid__cell--6 o-grid__cell--pull-2">
@@ -62,7 +66,12 @@
           href="http://www.huffingtonpost.com/entry/psychology-new-years-resolutions_us_5683e286e4b0b958f65ad409"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <img class="c-card__image" src="https://images.unsplash.com/photo-1431578409060-9aad91ba5f79?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb">
+          <img
+            class="c-card__image"
+            src="<%= image_path('huffington.jpeg') %>"
+            srcset="<%= image_path('huffington@2x.jpeg') %> 1.25x"
+            width="100%" height="auto"
+          >
           <span class="c-card__content">
             <span class="c-card__category">Press</span>
             <p class="u-font-bold u-font-sans-serif">Everything you need to know about making new year's resolutions</p>
@@ -75,7 +84,12 @@
           href="http://www.cbsnews.com/news/how-to-motivate-others-to-stick-with-new-years-resolutions/"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <img class="c-card__image" src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1500&q=80&cs=tinysrgb">
+          <img
+            class="c-card__image"
+            src="<%= image_path('cbs.jpeg') %>"
+            srcset="<%= image_path('cbs@2x.jpeg') %> 1.25x"
+            width="100%" height="auto"
+          >
           <span class="c-card__content">
             <span class="c-card__category">Press</span>
             <p class="u-font-bold u-font-sans-serif">How to make New Year's resolutions stick? Ask, don't tell</p>
@@ -88,7 +102,12 @@
           href="http://www.sciencedirect.com/science/article/pii/S1057740815001102"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <img class="c-card__image" src="https://images.unsplash.com/photo-1461838432805-dff34fe2d8cb?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb">
+          <img
+            class="c-card__image"
+            src="<%= image_path('psychology.jpeg') %>"
+            srcset="<%= image_path('psychology@2x.jpeg') %> 1.25x"
+            width="100%" height="auto"
+          >
           <span class="c-card__content">
             <span class="c-card__category">Paper</span>
             <p class="u-font-bold u-font-sans-serif">A Meta-Analytic Synthesis of the Question-Behavior Effect</p>
