@@ -18,11 +18,7 @@
   <div class="o-container v-home-roundtable-container">
     <div class="o-grid">
       <div class="o-grid__cell o-grid__cell--8 u-double-push-down">
-        <img
-          class="u-push-down"
-          src="<%= image_url('question.jpeg') %>"
-          title="Ask more questions."
-        >
+        <%= image_tag "question.jpeg", class: "u-push-down", title: "Ask more questions." %>
       </div>
 
       <div class="o-grid__cell o-grid__cell--6 o-grid__cell--pull-2">
@@ -66,12 +62,7 @@
           href="http://www.huffingtonpost.com/entry/psychology-new-years-resolutions_us_5683e286e4b0b958f65ad409"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <img
-            class="c-card__image"
-            src="<%= image_url('huffington.jpeg') %>"
-            srcset="<%= image_url('huffington@2x.jpeg') %> 1.25x"
-            width="100%" height="auto"
-          >
+          <%= image_tag "huffington.jpeg", class: "c-card__image" %>
           <span class="c-card__content">
             <span class="c-card__category">Press</span>
             <p class="u-font-bold u-font-sans-serif">Everything you need to know about making new year's resolutions</p>
@@ -84,12 +75,7 @@
           href="http://www.cbsnews.com/news/how-to-motivate-others-to-stick-with-new-years-resolutions/"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <img
-            class="c-card__image"
-            src="<%= image_url('cbs.jpeg') %>"
-            srcset="<%= image_url('cbs@2x.jpeg') %> 1.25x"
-            width="100%" height="auto"
-          >
+          <%= image_tag "cbs.jpeg", class: "c-card__image" %>
           <span class="c-card__content">
             <span class="c-card__category">Press</span>
             <p class="u-font-bold u-font-sans-serif">How to make New Year's resolutions stick? Ask, don't tell</p>
@@ -102,12 +88,7 @@
           href="http://www.sciencedirect.com/science/article/pii/S1057740815001102"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <img
-            class="c-card__image"
-            src="<%= image_url('psychology.jpeg') %>"
-            srcset="<%= image_url('psychology@2x.jpeg') %> 1.25x"
-            width="100%" height="auto"
-          >
+          <%= image_tag "psychology.jpeg", class: "c-card__image" %>
           <span class="c-card__content">
             <span class="c-card__category">Paper</span>
             <p class="u-font-bold u-font-sans-serif">A Meta-Analytic Synthesis of the Question-Behavior Effect</p>
