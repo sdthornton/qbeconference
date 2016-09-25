@@ -42,6 +42,8 @@ gem 'mail_form'
 
 gem 'redcarpet'
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'listen'
 end
