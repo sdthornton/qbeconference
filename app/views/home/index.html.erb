@@ -18,7 +18,12 @@
   <div class="o-container v-home-roundtable-container">
     <div class="o-grid">
       <div class="o-grid__cell o-grid__cell--8 u-double-push-down">
-        <%= image_tag "question.jpg", class: "u-push-down", alt: "Ask more questions." %>
+        <img
+          src="<%= image_path('question.webp') %>"
+          fallback="<%= image_path('question.jpg') %>"
+          onerror="this.onerror=null;this.src=this.getAttribute('fallback')"
+          class="u-push-down"
+        />
       </div>
 
       <div class="o-grid__cell o-grid__cell--6 o-grid__cell--pull-2">
@@ -62,7 +67,11 @@
           href="http://www.huffingtonpost.com/entry/psychology-new-years-resolutions_us_5683e286e4b0b958f65ad409"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <%= image_tag "huffington@2x.jpg", class: "c-card__image" %>
+          <img
+            src="<%= image_path('huffington.webp') %>"
+            fallback="<%= image_path('huffington.jpg') %>"
+            onerror="this.onerror=null;this.src=this.getAttribute('fallback')"
+          />
           <span class="c-card__content">
             <span class="c-card__category">Press</span>
             <p class="u-font-bold u-font-sans-serif">Everything you need to know about making new year's resolutions</p>
@@ -75,7 +84,11 @@
           href="http://www.cbsnews.com/news/how-to-motivate-others-to-stick-with-new-years-resolutions/"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <%= image_tag "cbs@2x.jpg", class: "c-card__image" %>
+          <img
+            src="<%= image_path('cbs.webp') %>"
+            fallback="<%= image_path('cbs.jpg') %>"
+            onerror="this.onerror=null;this.src=this.getAttribute('fallback')"
+          />
           <span class="c-card__content">
             <span class="c-card__category">Press</span>
             <p class="u-font-bold u-font-sans-serif">How to make New Year's resolutions stick? Ask, don't tell</p>
@@ -88,7 +101,11 @@
           href="http://www.sciencedirect.com/science/article/pii/S1057740815001102"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <%= image_tag "psychology@2x.jpg", class: "c-card__image" %>
+          <img
+            src="<%= image_path('psychology.webp') %>"
+            fallback="<%= image_path('psychology.jpg') %>"
+            onerror="this.onerror=null;this.src=this.getAttribute('fallback')"
+          />
           <span class="c-card__content">
             <span class="c-card__category">Paper</span>
             <p class="u-font-bold u-font-sans-serif">A Meta-Analytic Synthesis of the Question-Behavior Effect</p>

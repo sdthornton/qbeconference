@@ -1,12 +1,9 @@
 .v-home-banner {
-  background: image-url('banner-large.jpeg') center center no-repeat;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   padding: $base-line-height*3 0;
   position: relative;
-
-  @media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
-    background-image: image-url('banner-large@2x.jpeg');
-  }
 
   &:before {
     background: #212121;
@@ -17,6 +14,14 @@
     position: absolute;
     top: 0;
     width: 100%;
+  }
+
+  .webp & {
+    background-image: image-url('banner-large.webp');
+  }
+
+  .no-webp & {
+    background-image: image-url('banner-large.jpg');
   }
 }
 
