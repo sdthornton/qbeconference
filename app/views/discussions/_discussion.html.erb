@@ -27,8 +27,13 @@
     <div class="c-discussion-item__info u-font-monospace">
       <span><%= time_ago_in_words(discussion.created_at) %> ago</span> &nbsp;&bull;&nbsp;
       <span><%= discussion.created_by %></span> &nbsp;&bull;&nbsp;
-      <%= link_to discussion_path(discussion.slug, anchor: "comments") do %>
-        <%= discussion.comments_count %> comments
+      <%= link_to "#{discussion.comments_count} comments", discussion_path(discussion.slug, anchor: "comments") %>
+      <% if probably_deletable?(discussion) %>
+        &nbsp;&bull;&nbsp;
+        <%= link_to "Delete",
+            discussion_path(discussion),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete your post?" }  %>
       <% end %>
     </div>
   </div>

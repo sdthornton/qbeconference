@@ -22,10 +22,17 @@
           <% end %>
         </div>
         <h5 class="u-base-line-height u-no-bottom-margin"><%= @discussion.title %></h5>
-        <div class="u-font-monospace u-text-gray">
+        <div class="u-font-monospace u-text-darkish-gray">
           <small>
             Submitted <%= time_ago_in_words(@discussion.created_at) %> ago
             by <%= @discussion.created_by %>
+            <% if probably_deletable?(@discussion) %>
+              &nbsp;&bull;&nbsp;
+              <%= link_to "Delete",
+                  discussion_path(@discussion),
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to delete your post?" }  %>
+            <% end %>
           </small>
         </div>
         <div class="u-push-down"><%= markdown(@discussion.content) %></div>

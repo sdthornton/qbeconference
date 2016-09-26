@@ -1,7 +1,7 @@
 class DiscussionsController < ApplicationController
 
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :destroy]
 
   def index
     if user_signed_in?
@@ -27,15 +27,13 @@ class DiscussionsController < ApplicationController
                   AND users_discussion_votes.user_id = #{current_user.id}")
           .select(discussions_with_user_vote_selection)
           .friendly.find(params[:id])
+
+      @new_comment = Comment.new
     else
       @discussion = Discussion.friendly.find(params[:id])
     end
 
     @comments = @discussion.comments.hash_tree(limit_depth: 6)
-
-    if user_signed_in?
-      @new_comment = Comment.new
-    end
   end
 
   def new
@@ -52,6 +50,17 @@ class DiscussionsController < ApplicationController
     else
       flash[:error] = "Something went wrong"
       render :new
+    end
+  end
+
+  def destroy
+    @discussion = Discussion.friendly.find(params[:id])
+
+    if current_user == @discussion.user
+      @discussion.destroy
+      redirect_to discussions_path
+    else
+      redirect_to discussions_path, status: :unauthorized
     end
   end
 
@@ -101,9 +110,6 @@ class DiscussionsController < ApplicationController
         end
       }
     end
-  end
-
-  def destroy
   end
 
 private

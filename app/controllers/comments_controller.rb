@@ -25,7 +25,14 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
 
+    if current_user = @comment.user
+      @comment.destroy
+      redirect_to discussion_path(params[:discussion_id])
+    else
+      redirect_to discussion_path(params[:discussion_id]), status: :unauthorized
+    end
   end
 
 private

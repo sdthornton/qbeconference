@@ -9,4 +9,8 @@ module DiscussionHelper
     end.join.html_safe
   end
 
+  def probably_deletable?(item)
+    user_signed_in? && current_user.name == item.created_by
+  end
+
 end
