@@ -38,3 +38,11 @@
 .o-comment__respond {
   margin-top: 0.5rem;
 }
+
+.o-comment__reply {
+  display: inline;
+}
+
+.o-comment .o-comment .o-comment .o-comment .o-comment .o-comment .o-comment__reply {
+  display: none !important;
+}

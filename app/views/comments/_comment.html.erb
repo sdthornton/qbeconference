@@ -9,13 +9,13 @@
   <%= markdown(comment.content) %>
 </div>
 <div class="o-comment__respond u-font-monospace u-text-gray">
-  <small>
-    <!-- <a href="#" class="icon-upvote u-text-gray u-no-decoration"></a>
+  <!-- <small>
+    <a href="#" class="icon-upvote u-text-gray u-no-decoration"></a>
     <a href="#" class="icon-downvote u-text-gray u-no-decoration"></a>
-    &bull; -->
-  </small>
+    &bull;
+  </small> -->
   <% if user_signed_in? %>
-    <% if comment.depth < 5 %>
+    <div class="o-comment__reply">
       <a href="#" class="js-comment-toggle u-no-decoration v-comment__reply-link"><small>Reply</small></a>
       <%= form_for([@discussion, @new_comment], html: { class: "u-font-sans-serif c-form--comment u-hide u-push-down" }) do |f| %>
         <%= f.hidden_field :parent_id, value: comment.id %>
@@ -28,10 +28,12 @@
           </button>
         </div>
       <% end %>
-    <% end %>
+      <% if probably_deletable?(comment) %>
+        <small>&nbsp;&bull;&nbsp;</small>
+      <% end %>
+    </div>
     <% if probably_deletable?(comment) %>
       <small>
-        &nbsp;&bull;&nbsp;
         <%= link_to "Delete",
             discussion_comment_path(@discussion, comment),
             method: :delete,

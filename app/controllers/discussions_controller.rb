@@ -21,7 +21,6 @@ class DiscussionsController < ApplicationController
     if user_signed_in?
       @discussion =
         Discussion
-          .includes(:comments)
           .joins("LEFT JOIN users_discussion_votes
                   ON discussions.id = users_discussion_votes.discussion_id
                   AND users_discussion_votes.user_id = #{current_user.id}")
