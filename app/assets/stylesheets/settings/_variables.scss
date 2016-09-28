@@ -62,5 +62,7 @@ $box-shadows: (
 );
 
 $transitions: (
-  simple: all 0.2s ease-in-out
+  standard: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+  deceleration: all 0.2s cubic-bezier(0.0, 0.0, 0.2, 1),
+  acceleration: all 0.2s cubic-bezier(0.4, 0.0, 1, 1)
 );

@@ -2,19 +2,29 @@
   <a href="/">
     <%= image_tag "qbe-logo.svg", height: "36", class: "o-header__logo" %>
   </a>
-  <nav class="o-main-nav u-text-right">
-    <%= link_to "The QBE", root_path, class: "o-main-nav__link" %>
-    <%= link_to "Press & Papers", press_and_papers_path, class: "o-main-nav__link" %>
-    <a href="http://acrweb.org/acr/conference/program.aspx" class="o-main-nav__link" target="_blank">
-      Roundtable
+  <div id="menu">
+    <a
+      href="#menu" data-turbolinks="false"
+      class="o-header__mobile-link u-font-monospace u-float-right u-no-decoration"
+    >
+      Menu <i class="o-header__mobile-link-icon"></i>
     </a>
-    <%= link_to "Discussion", discussions_path, class: "o-main-nav__link" %>
-    <%= link_to "Contact", contact_path, class: "o-main-nav__link" %>
-    <span class="o-main-nav__separator"></span>
-    <% if user_signed_in? %>
-      <%= link_to "Log Out", logout_path, class: "o-main-nav__link", method: :delete %>
-    <% else %>
-      <%= link_to "Login", login_path, class: "o-main-nav__link" %>
-      <%= link_to "Register", register_path, class: "o-main-nav__link o-main-nav__link--sign-up u-text-white u-bg-primary" %>
-    <% end %>
+    <a href="#" class="o-header__mobile-cover" data-turbolinks="false"></a>
+    <nav class="o-main-nav u-bg-white u-text-right">
+      <%= link_to "The QBE", root_path, class: "o-main-nav__link" %>
+      <%= link_to "Press & Papers", press_and_papers_path, class: "o-main-nav__link" %>
+      <a href="http://acrweb.org/acr/conference/program.aspx" class="o-main-nav__link" target="_blank">
+        Roundtable
+      </a>
+      <%= link_to "Discussion", discussions_path, class: "o-main-nav__link" %>
+      <%= link_to "Contact", contact_path, class: "o-main-nav__link" %>
+      <span class="o-main-nav__separator"></span>
+      <% if user_signed_in? %>
+        <%= link_to "Log Out", logout_path, class: "o-main-nav__link", method: :delete %>
+      <% else %>
+        <%= link_to "Login", login_path, class: "o-main-nav__link" %>
+        <%= link_to "Register", register_path, class: "o-main-nav__link o-main-nav__link--sign-up u-text-white u-bg-primary" %>
+      <% end %>
+    </nav>
+  </div>
 </header>

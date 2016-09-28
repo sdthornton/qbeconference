@@ -7,7 +7,7 @@
   cursor: pointer;
   padding: 0.5*$base-line-height $base-line-height;
   text-decoration: none;
-  transition: map-get($transitions, simple);
+  transition: map-get($transitions, standard);
 
   &:hover {
     box-shadow: map-get($box-shadows, button-hover);

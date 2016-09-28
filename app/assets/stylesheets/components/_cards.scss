@@ -6,7 +6,7 @@
   margin-bottom: $base-line-height;
   overflow: hidden;
   text-decoration: none;
-  transition: map-get($transitions, simple);
+  transition: map-get($transitions, standard);
 
   &:hover {
     box-shadow: map-get($box-shadows, wide);
