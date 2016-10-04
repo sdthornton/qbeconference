@@ -63,9 +63,38 @@
   z-index: 0;
 }
 
-.v-home-question-image__img {
-  background: url('https://images.unsplash.com/photo-1461950209984-1ce1f03a1be9?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1499&q=80&cs=tinysrgb') center center no-repeat;
-  background-size: cover;
-  height: 17*$base-line-height;
-  width: 100%;
+@media only screen and (max-width: 1040px) {
+  .v-home__talk-item {
+    float: right;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .v-home-banner {
+    padding-bottom: 8*$base-line-height;
+  }
+
+  .v-home-callout {
+    float: none;
+    margin: auto;
+    max-width: 768px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .v-home-roundtable-image { display: none; }
+
+  .v-home-roundtable-cell {
+    clear: both;
+    float: none;
+    margin: auto;
+    max-width: 768px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .v-home-roundtable {
+    padding: 0 32px 32px;
+  }
 }

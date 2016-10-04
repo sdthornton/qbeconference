@@ -1,4 +1,4 @@
-<article class="c-discussion-article">
+<article class="v-discussion-article">
   <div class="o-container o-container--small u-double-push-down">
     <div class="o-grid">
       <div class="o-grid__cell o-grid__cell--12">
@@ -21,19 +21,21 @@
             <%= link_to "", login_path, class: "c-vote c-vote--downvote icon-downvote u-no-decoration" %>
           <% end %>
         </div>
-        <h5 class="u-base-line-height u-no-bottom-margin"><%= @discussion.title %></h5>
-        <div class="u-font-monospace u-text-darkish-gray">
-          <small>
-            Submitted <%= time_ago_in_words(@discussion.created_at) %> ago
-            by <%= @discussion.created_by %>
-            <% if probably_deletable?(@discussion) %>
-              &nbsp;&bull;&nbsp;
-              <%= link_to "Delete",
-                  discussion_path(@discussion),
-                  method: :delete,
-                  data: { confirm: "Are you sure you want to delete your post?" }  %>
-            <% end %>
-          </small>
+        <div class="c-discussion-item__title">
+          <h5 class="u-base-line-height u-no-bottom-margin"><%= @discussion.title %></h5>
+          <div class="u-font-monospace u-text-darkish-gray">
+            <small>
+              Submitted <%= time_ago_in_words(@discussion.created_at) %> ago
+              by <%= @discussion.created_by %>
+              <% if probably_deletable?(@discussion) %>
+                &nbsp;&bull;&nbsp;
+                <%= link_to "Delete",
+                    discussion_path(@discussion),
+                    method: :delete,
+                    data: { confirm: "Are you sure you want to delete your post?" }  %>
+              <% end %>
+            </small>
+          </div>
         </div>
         <div class="u-push-down"><%= markdown(@discussion.content) %></div>
       </div>

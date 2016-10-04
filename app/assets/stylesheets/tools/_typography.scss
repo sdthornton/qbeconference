@@ -18,4 +18,15 @@
     margin-top: 0;
     margin-bottom: margin($level);
   }
+
+  @if ($level == 5 or $level == 4 or $level == 3) {
+    @media only screen and (max-width: 512px) {
+      font-size: type-scale($level - 1);
+      line-height: line-height($level - 1);
+
+      @if ($include-margin == true) {
+        margin-bottom: margin($level - 1);
+      }
+    }
+  }
 }

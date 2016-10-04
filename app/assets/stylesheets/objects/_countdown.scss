@@ -1,7 +1,9 @@
 .o-countdown {
+  @include clearfix;
   color: color(black);
   font-family: $font-monospace;
-  padding: 1.5rem 0;
+  max-height: 5*$base-line-height;
+  padding: $base-line-height 0;
   text-align: center;
 }
 
@@ -28,3 +30,19 @@
 [data-countdown="hours"]:after { content: "Hours"; }
 [data-countdown="minutes"]:after { content: "Minutes"; }
 [data-countdown="seconds"]:after { content: "Seconds"; }
+
+@media only screen and (max-width: 512px) {
+  .o-countdown {
+    max-height: 4*$base-line-height;
+    padding: 0.75*$base-line-height 0 0.25*$base-line-height;
+  }
+
+  .o-countdown__number {
+    font-size: map-get($type-scale, 3);
+    width: 5rem;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  [data-countdown="seconds"] { display: none; }
+}

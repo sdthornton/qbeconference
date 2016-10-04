@@ -69,3 +69,25 @@
 .o-grid__cell--pull-5 { margin-left: -41.666% }
 .o-grid__cell--pull-6 { margin-left: -50%; }
 .o-grid__cell--pull-8 { margin-left: -66.666%; }
+
+@media only screen and (max-width: 1040px) {
+  .o-grid__cell--3 { width: 33.333%; }
+}
+
+@media only screen and (max-width: 768px) {
+  .o-grid__cell--3 { width: 50%; }
+
+  .o-grid__cell--8,
+  .o-grid__cell--6,
+  .o-grid__cell--4 {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  .o-grid__cell {
+    margin-left: 0;
+    width: 100%;
+  }
+}

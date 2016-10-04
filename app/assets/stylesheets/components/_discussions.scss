@@ -33,3 +33,37 @@
 .c-discussion-item__info {
   @include type-setting(-1, false);
 }
+
+@media only screen and (max-width: 1088px) {
+  .v-discussions {
+    .o-container {
+      max-width: 768px;
+    }
+
+    .o-grid__cell {
+      margin-left: 0;
+      width: 100%;
+
+      &:last-child {
+        margin-top: 2*$base-line-height;
+      }
+    }
+
+    .c-button {
+      float: right;
+    }
+  }
+}
+
+@media only screen and (max-width: 832px) {
+  .v-discussion-article {
+    .c-discussion-item__voting {
+      left: 32px;
+      top: -8px;
+    }
+
+    .c-discussion-item__title {
+      padding-left: 32px;
+    }
+  }
+}

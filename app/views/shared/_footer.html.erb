@@ -1,17 +1,17 @@
-<footer id="site_footer" class="u-bg-black" data-turbolinks-permanent>
+<footer id="site_footer" class="v-footer u-bg-black" data-turbolinks-permanent>
   <div class="o-container u-large-vertical-padding">
     <div class="o-grid o-grid--small-padding u-push-down u-bottom-padding">
-      <div class="o-grid__cell o-grid__cell--2">
-        <h6 class="u-text-white u-text-right">The<br>Question-<br>Behavior<br>Effect</h5>
+      <div class="o-grid__cell o-grid__cell--2 u-text-right u-text-left--tablet">
+        <h6 class="u-text-white u-no-bottom-margin">The<br>Question-<br>Behavior<br>Effect</h5>
       </div>
-      <div class="o-grid__cell o-grid__cell--2 o-grid__cell--offset-1 u-font-monospace">
+      <div class="v-footer__nav o-grid__cell o-grid__cell--2 o-grid__cell--offset-1 u-font-monospace">
         <%= link_to "The QBE", root_path, class: "u-text-white u-display-block" %>
         <%= link_to "Press & Papers", press_and_papers_path, class: "u-text-white u-display-block u-push-down" %>
         <a href="http://acrweb.org/acr/conference/program.aspx" class="u-text-white u-display-block u-push-down" target="_blank">
           Roundtable
         </a>
       </div>
-      <div class="o-grid__cell o-grid__cell--2 u-font-monospace">
+      <div class="v-footer__nav-2 o-grid__cell o-grid__cell--2 u-font-monospace">
         <%= link_to "Discussion", discussions_path, class: "u-text-white u-display-block" %>
         <%= link_to "Contact", contact_path, class: "u-text-white u-display-block u-push-down" %>
         <% if !user_signed_in? %>
@@ -19,7 +19,7 @@
           <%= link_to "Register", register_path, class: "u-text-white u-display-block u-push-down" %>
         <% end %>
       </div>
-      <div class="o-grid__cell o-grid__cell--2 o-grid__cell--offset-3 u-text-right u-font-monospace">
+      <div class="o-grid__cell o-grid__cell--2 o-grid__cell--offset-3 u- u-text-left--tablet u-font-monospace">
         <a
           href="&#109;&#097;&#105;&#108;&#116;&#111;:&#109;&#097;&#105;&#108;&#064;&#113;&#117;&#101;&#115;&#116;&#105;&#111;&#110;&#098;&#101;&#104;&#097;&#118;&#105;&#111;&#114;&#046;&#111;&#114;&#103;"
           class="u-text-white u-display-block u-no-decoration"
@@ -34,10 +34,10 @@
       </div>
     </div>
   </div>
-  <div class="u-text-white u-text-right">
+  <div class="u-text-white">
     <div class="o-container">
       <div class="o-grid">
-        <div class="o-grid__cell o-grid__cell--12">
+        <div class="o-grid__cell o-grid__cell--12 u-text-right u-text-left--tablet">
           <p class="u-push-down">
             &copy; Copyright 2016, Washington State University<br>
             <small class="u-text-gray">Special thanks to reddit.com for the discussion model used on this site</small>

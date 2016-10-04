@@ -13,11 +13,11 @@
     <nav class="o-main-nav u-bg-white u-text-right">
       <%= link_to "The QBE", root_path, class: "o-main-nav__link" %>
       <%= link_to "Press & Papers", press_and_papers_path, class: "o-main-nav__link" %>
-      <a href="http://acrweb.org/acr/conference/program.aspx" class="o-main-nav__link" target="_blank">
-        Roundtable
-      </a>
       <%= link_to "Discussion", discussions_path, class: "o-main-nav__link" %>
       <%= link_to "Contact", contact_path, class: "o-main-nav__link" %>
+      <a href="http://acrweb.org/acr/conference/program.aspx" class="o-main-nav__link" target="_blank">
+        Roundtable <small class="icon-link-external"></small>
+      </a>
       <span class="o-main-nav__separator"></span>
       <% if user_signed_in? %>
         <%= link_to "Log Out", logout_path, class: "o-main-nav__link", method: :delete %>

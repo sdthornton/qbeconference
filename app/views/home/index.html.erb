@@ -4,7 +4,7 @@
       Question-Behavior Effect
     </h1>
     <div class="o-grid u-text-left u-push-down">
-      <div class="o-grid__cell o-grid__cell--6">
+      <div class="o-grid__cell o-grid__cell--6 v-home-callout">
         <h5 class="u-text-white u-font-normal u-no-margin">
           Will we see you in Berlin? Will you join us at the Roundtable?
           Will you help contribute to furthering this area of research?
@@ -17,7 +17,7 @@
 <section class="u-large-bottom-padding">
   <div class="o-container v-home-roundtable-container">
     <div class="o-grid">
-      <div class="o-grid__cell o-grid__cell--8 u-double-push-down">
+      <div class="v-home-roundtable-image o-grid__cell o-grid__cell--8 u-double-push-down">
         <img
           src="<%= image_path('question.webp') %>"
           fallback="<%= image_path('question.jpg') %>"
@@ -26,7 +26,7 @@
         />
       </div>
 
-      <div class="o-grid__cell o-grid__cell--6 o-grid__cell--pull-2">
+      <div class="v-home-roundtable-cell o-grid__cell o-grid__cell--6 o-grid__cell--pull-2">
         <div class="v-home-roundtable c-xwide-shadow u-bg-white u-large-bottom-padding u-radius">
           <div class="o-countdown u-stretch-in-grid u-bg-light-gray">
             <div class="o-countdown__number" data-countdown="days"></div>
@@ -62,7 +62,7 @@
       <h1 class="o-grid__cell o-grid__cell--12">Recent Talk</h1>
     </div>
     <div class="o-grid o-grid--small-padding u-push-down">
-      <div class="o-grid__cell o-grid__cell--3">
+      <div class="o-grid__cell o-grid__cell--3 v-home__talk-item">
         <a
           href="http://www.huffingtonpost.com/entry/psychology-new-years-resolutions_us_5683e286e4b0b958f65ad409"
           class="c-card u-bg-light-gray" target="_blank"
@@ -79,7 +79,7 @@
           </span>
         </a>
       </div>
-      <div class="o-grid__cell o-grid__cell--3">
+      <div class="o-grid__cell o-grid__cell--3 v-home__talk-item">
         <a
           href="http://www.cbsnews.com/news/how-to-motivate-others-to-stick-with-new-years-resolutions/"
           class="c-card u-bg-light-gray" target="_blank"
@@ -96,7 +96,7 @@
           </span>
         </a>
       </div>
-      <div class="o-grid__cell o-grid__cell--3">
+      <div class="o-grid__cell o-grid__cell--3 v-home__talk-item">
         <a
           href="http://www.sciencedirect.com/science/article/pii/S1057740815001102"
           class="c-card u-bg-light-gray" target="_blank"
@@ -113,7 +113,7 @@
           </span>
         </a>
       </div>
-      <div class="o-grid__cell o-grid__cell--3">
+      <div class="o-grid__cell o-grid__cell--3 v-home__talk-item">
         <%= link_to discussions_path, class: "c-card u-bg-primary u-text-white" do %>
           <span class="c-card__content">
             <h3 class="u-text-white u-push-down">Join the Discussion</h3>
