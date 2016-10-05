@@ -1,0 +1,18 @@
+.c-sort-order-label {
+  position: relative;
+}
+
+.c-sort-order-checkbox,
+.c-sort-order {
+  display: none;
+  min-width: 80px;
+  padding: 0.25*$base-line-height 0.5*$base-line-height;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 999;
+}
+
+.c-sort-order-checkbox:checked ~ .c-sort-order {
+  display: block;
+}

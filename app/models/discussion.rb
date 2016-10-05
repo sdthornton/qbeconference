@@ -12,6 +12,10 @@ class Discussion < ApplicationRecord
     self.created_by = user.name
   end
 
+  after_create do
+    UsersDiscussionVote.create(user: user, discussion: self, value: 1)
+  end
+
   def slugify
     [:title]
   end

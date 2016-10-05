@@ -7,13 +7,20 @@ class DiscussionsController < ApplicationController
     if user_signed_in?
       @discussions =
         Discussion
-          .order(votes: :desc, created_at: :desc)
           .joins("LEFT JOIN users_discussion_votes
                   ON discussions.id = users_discussion_votes.discussion_id
                   AND users_discussion_votes.user_id = #{current_user.id}")
           .select(discussions_with_user_vote_selection)
     else
-      @discussions = Discussion.order(votes: :desc, created_at: :desc)
+      @discussions = Discussion.all
+    end
+
+    if params[:sort] == 'new'
+      @discussions = @discussions.order(created_at: :desc)
+    elsif params[:sort] == 'old'
+      @discussions = @discussions.order(created_at: :asc)
+    else
+      @discussions = @discussions.order(votes: :desc, created_at: :desc)
     end
   end
 

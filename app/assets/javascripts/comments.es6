@@ -1,4 +1,4 @@
-window.QBE = window.QBE || {};
+window.QBE || (window.QBE = {});
 QBE.Comment = class Comment {
   constructor() {
     this.$toggle = $('.js-comment-toggle');

@@ -4,3 +4,5 @@
 //= require polyfills
 //= require_tree .
 //= require zxcvbn
+
+QBE.isReady = true;

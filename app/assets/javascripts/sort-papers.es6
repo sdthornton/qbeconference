@@ -1,4 +1,4 @@
-window.QBE = window.QBE || {};
+window.QBE || (window.QBE = {});
 QBE.SortPapers = class SortPapers {
   constructor() {
     this.$table = $(document.getElementById('papers_table'));

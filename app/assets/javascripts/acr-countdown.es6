@@ -1,4 +1,4 @@
-window.QBE = window.QBE || {};
+window.QBE || (window.QBE = {});
 QBE.ACRCountdown = class ACRCountdown {
   constructor() {
     this.days = document.querySelector('[data-countdown="days"]');

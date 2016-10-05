@@ -6,7 +6,7 @@ const STRENGTH_TEXT = {
   4: "Great"
 };
 
-window.QBE = window.QBE || {};
+window.QBE || (window.QBE = {});
 QBE.Password = class Password {
   constructor() {
     this.newUserForm = document.getElementById('new_user');

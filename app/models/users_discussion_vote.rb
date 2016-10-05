@@ -5,6 +5,6 @@ class UsersDiscussionVote < ApplicationRecord
   validates_uniqueness_of :discussion_id, scope: :user_id
 
   before_save do
-    discussion.update_attributes(votes: discussion.votes + self.value) # discussion.value can be considered an expanded counter_cache
+    discussion.update_attributes(votes: discussion.votes + self.value)
   end
 end

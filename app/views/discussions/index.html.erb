@@ -7,16 +7,34 @@
           Will you join the conversation?
         </h6>
         <div class="u-double-push-down">
-          <%= link_to user_signed_in? ? "Add a new topic" : "Log in & add a topic",
-              new_discussion_path, class: "c-button c-button--primary" %>
+          <%= link_to "Add a new topic", new_discussion_path, class: "c-button c-button--primary" %>
         </div>
       </div>
       <div class="o-grid__cell o-grid__cell--8 u-push-down">
-        <div class="c-card c-card--no-shadow u-radius">
-          <div class="c-card__content">
+        <div class="u-font-monospace">
+          Sorted by:
+          <label class="c-sort-order-label">
+            <% if params[:sort] == 'new' %>
+              <span class="u-underline">New</span>
+            <% elsif params[:sort] == 'old' %>
+              <span class="u-underline">Old</span>
+            <% else %>
+              <span class="u-underline">Top</span>
+            <% end %>
+            <i class="icon-arrow-down"></i>
+            <input type="checkbox" id="sort_order" class="c-sort-order-checkbox">
+            <div class="c-sort-order c-shadow u-radius u-bg-white">
+              <%= link_to "Top", discussions_path, class: 'u-no-decoration u-display-block' %>
+              <%= link_to "New", discussions_path(sort: 'new'), class: 'u-no-decoration u-display-block' %>
+              <%= link_to "Old", discussions_path(sort: 'old'), class: 'u-no-decoration u-display-block' %>
+            </div>
+          </label>
+        </div>
+        <div class="c-card c-card--no-shadow u-radius u-push-down">
+          <div class="c-card__content c-card__content--discussions">
             <div class="c-discussion-items u-relative">
               <% if @discussions.present? %>
-                <%= render @discussions %>
+                <%= render partial: 'discussion', collection: @discussions, cached: true %>
               <% else %>
                 <p class="u-double-push-down">
                   Looks like no one has added a topic yet. How about

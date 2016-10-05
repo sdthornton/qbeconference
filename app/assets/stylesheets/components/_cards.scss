@@ -29,6 +29,10 @@
   padding-top: 0.5*$base-line-height;
 }
 
+.c-card__content--discussions {
+  padding: 0 $base-line-height;
+}
+
 .c-card__category {
   color: color(gray);
   font-family: $font-monospace;

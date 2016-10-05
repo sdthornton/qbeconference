@@ -1,4 +1,4 @@
-window.QBE = window.QBE || {};
+window.QBE || (window.QBE = {});
 QBE.Voting = class Voting {
   constructor() {
     this.vote = $('.js-vote');
