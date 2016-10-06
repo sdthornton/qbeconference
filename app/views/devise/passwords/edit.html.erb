@@ -1,25 +1,60 @@
-<h2>Change your password</h2>
+<section class="u-large-vertical-padding u-bg-light-gray">
+  <div class="o-container o-container--xsmall">
+    <div class="o-grid">
+      <div class="o-grid__cell o-grid__cell--12 u-text-center">
+        <h3>Change your password</h3>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+        <div class="c-card c-card--no-shadow">
+          <div class="c-card__content u-text-left">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: "c-form u-push-down" }) do |f| %>
+              <%= devise_error_messages! %>
+              <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+              <div class="c-form__group">
+                <%= f.label :password, "New password" %>
+                <%= f.password_field :password, class: "c-form__control", autofocus: true, autocomplete: "off", required: true, minlength: 6 %>
+                <small class="c-form__text u-text-gray">At least <%= @minimum_password_length %> characters &amp; 3 bars in strength.</small>
+                <div class="o-password-strength-wrap">
+                  <div id="password_strength" class="o-password-strength" data-strength="0">
+                    <div class="o-password-strength__indicator" data-value="1"></div>
+                    <div class="o-password-strength__indicator" data-value="2"></div>
+                    <div class="o-password-strength__indicator" data-value="3"></div>
+                    <div class="o-password-strength__indicator" data-value="4"></div>
+                    <div class="u-text-right u-font-monospace">
+                      <div class="o-password-strength__review" data-strength-text=""></div>
+                      <div
+                        class="o-password-strength__recommendations hint--left"
+                        aria-label="A strong password doesn't need a bunch of random letters and symbols. Rather, choose a few unique but unrelated words that you can remember, e.g. ExcitedMaggieBulldogSnout."
+                      >i</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="c-form__group">
+                <%= f.label :password_confirmation, "Confirm new password" %>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "c-form__control" %>
+              </div>
+
+              <div class="c-form__group">
+                <label>Bot Stopper</label>
+                <%= recaptcha_tags %>
+                <small class="c-form__text u-text-gray">
+                  This helps ensure the discussion forum isn't full of spam.
+                </small>
+              </div>
+
+              <div class="c-form__group">
+                <%= f.submit "Change my password", class: "c-button c-button--accent c-button--block icon-lock" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
+<% content_for :javascript do %>
+  new QBE.Password();
 <% end %>
-
-<%= render "devise/shared/links" %>

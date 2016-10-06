@@ -30,8 +30,7 @@
 
               <div class="c-form__group">
                 <%= f.label :password %>
-                <br />
-                <%= f.password_field :password, class: "c-form__control", autocomplete: "off", required: true, minlength: 6 %>
+                <%= f.password_field :password, class: "c-form__control", autofocus: true, autocomplete: "off", required: true, minlength: 6 %>
                 <small class="c-form__text u-text-gray">At least <%= @minimum_password_length %> characters &amp; 3 bars in strength.</small>
                 <div class="o-password-strength-wrap">
                   <div id="password_strength" class="o-password-strength" data-strength="0">
@@ -58,7 +57,9 @@
               <div class="c-form__group">
                 <label>Bot Stopper</label>
                 <%= recaptcha_tags %>
-                <small class="c-form__text u-text-gray">This helps ensure the discussion forum isn't full of spam.</small>
+                <small class="c-form__text u-text-gray">
+                  This helps ensure the discussion forum isn't full of spam.
+                </small>
               </div>
 
               <div class="c-form__group">
