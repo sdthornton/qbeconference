@@ -1,16 +1,26 @@
-<h2>Forgot your password?</h2>
+<section class="u-large-vertical-padding u-bg-light-gray">
+  <div class="o-container o-container--xsmall">
+    <div class="o-grid">
+      <div class="o-grid__cell o-grid__cell--12 u-text-center">
+        <h3>Forgot your password?</h3>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+        <div class="c-card c-card--no-shadow">
+          <div class="c-card__content u-text-left">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "c-form u-push-down" }) do |f| %>
+              <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+              <div class="c-form__group">
+                <%= f.label :email, "Your email" %>
+                <%= f.email_field :email, autofocus: true, autocomplete: "off", class: "c-form__control" %>
+              </div>
+
+              <div class="c-form__group">
+                <%= f.submit "Send me reset password instructions", class: "c-button c-button--accent c-button--block" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
