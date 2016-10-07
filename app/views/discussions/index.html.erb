@@ -13,6 +13,7 @@
       <div class="o-grid__cell o-grid__cell--8 u-push-down">
         <div class="u-font-monospace">
           Sorted by:
+          <%= current_user.present? %>
           <label class="c-sort-order-label">
             <% if params[:sort] == 'new' %>
               <span class="u-underline">New</span>
@@ -34,7 +35,11 @@
           <div class="c-card__content c-card__content--discussions">
             <div class="c-discussion-items u-relative">
               <% if @discussions.present? %>
-                <%= render partial: 'discussion', collection: @discussions, cached: true %>
+                <% if user_signed_in? %>
+                  <%= render partial: 'discussion', collection: @discussions %>
+                <% else %>
+                  <%= render partial: 'discussion', collection: @discussions, cached: true %>
+                <% end %>
               <% else %>
                 <p class="u-double-push-down">
                   Looks like no one has added a topic yet. How about
@@ -50,5 +55,5 @@
 </section>
 
 <% content_for :javascript do %>
-  new QBE.Voting();
+  QBE.instances.voting = new QBE.Voting();
 <% end %>

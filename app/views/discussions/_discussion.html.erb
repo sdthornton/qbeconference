@@ -1,4 +1,4 @@
-<% cache discussion do %>
+<% cache [discussion, (user_signed_in? ? current_user.id : '0')] do %>
   <div class="c-discussion-item">
     <small class="c-discussion-item__voting u-text-center">
       <% if user_signed_in? %>

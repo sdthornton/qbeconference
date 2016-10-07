@@ -1,48 +1,50 @@
-<article class="v-discussion-article">
-  <div class="o-container o-container--small u-double-push-down">
-    <div class="o-grid">
-      <div class="o-grid__cell o-grid__cell--12">
-        <div class="c-discussion-item__voting u-text-center">
-          <% if user_signed_in? %>
-            <%= link_to "",
-                discussion_upvote_path(@discussion.slug),
-                class: "js-vote c-vote c-vote--upvote icon-upvote u-no-decoration
-                        #{'c-vote--chosen' if user_signed_in? && @discussion.current_user_vote == 1}" %><br>
-            <span class="js-vote-count u-font-monospace"><%= @discussion.votes %></span><br>
-            <span class="hint--right c-vote--downvote-tip" aria-label="This is not a dislike button. Downvote when a topic is unhelpful, poorly written, or innappropriate.">
+<% cache [@discussion, (user_signed_in? ? current_user.id : '0')] do %>
+  <article class="v-discussion-article">
+    <div class="o-container o-container--small u-double-push-down">
+      <div class="o-grid">
+        <div class="o-grid__cell o-grid__cell--12">
+          <div class="c-discussion-item__voting u-text-center">
+            <% if user_signed_in? %>
               <%= link_to "",
-                  discussion_downvote_path(@discussion.slug),
-                  class: "js-vote c-vote c-vote--downvote icon-downvote u-no-decoration
-                          #{'c-vote--chosen' if user_signed_in? && @discussion.current_user_vote == -1}" %>
-            </span>
-          <% else %>
-            <%= link_to "", login_path, class: "c-vote c-vote--upvote icon-upvote u-no-decoration" %><br>
-            <span class="js-vote-count u-font-monospace"><%= @discussion.votes %></span><br>
-            <%= link_to "", login_path, class: "c-vote c-vote--downvote icon-downvote u-no-decoration" %>
-          <% end %>
-        </div>
-        <div class="c-discussion-item__title">
-          <h5 class="u-base-line-height u-no-bottom-margin"><%= @discussion.title %></h5>
-          <div class="u-font-monospace u-text-darkish-gray">
-            <small>
-              Submitted <%= time_ago_in_words(@discussion.created_at) %> ago
-              by <%= @discussion.created_by %>
-              <% if probably_deletable?(@discussion) %>
-                &nbsp;&bull;&nbsp;
-                <%= link_to "Delete",
-                    discussion_path(@discussion),
-                    method: :delete,
-                    data: { confirm: "Are you sure you want to delete your post?" }  %>
-              <% end %>
-            </small>
+                  discussion_upvote_path(@discussion.slug),
+                  class: "js-vote c-vote c-vote--upvote icon-upvote u-no-decoration
+                          #{'c-vote--chosen' if user_signed_in? && @discussion.current_user_vote == 1}" %><br>
+              <span class="js-vote-count u-font-monospace"><%= @discussion.votes %></span><br>
+              <span class="hint--right c-vote--downvote-tip" aria-label="This is not a dislike button. Downvote when a topic is unhelpful, poorly written, or innappropriate.">
+                <%= link_to "",
+                    discussion_downvote_path(@discussion.slug),
+                    class: "js-vote c-vote c-vote--downvote icon-downvote u-no-decoration
+                            #{'c-vote--chosen' if user_signed_in? && @discussion.current_user_vote == -1}" %>
+              </span>
+            <% else %>
+              <%= link_to "", login_path, class: "c-vote c-vote--upvote icon-upvote u-no-decoration" %><br>
+              <span class="js-vote-count u-font-monospace"><%= @discussion.votes %></span><br>
+              <%= link_to "", login_path, class: "c-vote c-vote--downvote icon-downvote u-no-decoration" %>
+            <% end %>
           </div>
+          <div class="c-discussion-item__title">
+            <h5 class="u-base-line-height u-no-bottom-margin"><%= @discussion.title %></h5>
+            <div class="u-font-monospace u-text-darkish-gray">
+              <small>
+                Submitted <%= time_ago_in_words(@discussion.created_at) %> ago
+                by <%= @discussion.created_by %>
+                <% if probably_deletable?(@discussion) %>
+                  &nbsp;&bull;&nbsp;
+                  <%= link_to "Delete",
+                      discussion_path(@discussion),
+                      method: :delete,
+                      data: { confirm: "Are you sure you want to delete your post?" }  %>
+                <% end %>
+              </small>
+            </div>
+          </div>
+          <div class="u-push-down"><%= markdown(@discussion.content) %></div>
         </div>
-        <div class="u-push-down"><%= markdown(@discussion.content) %></div>
       </div>
+      <hr class="u-push-down">
     </div>
-    <hr class="u-push-down">
-  </div>
-</article>
+  </article>
+<% end %>
 
 <section id="comments" class="u-large-bottom-padding v-comments">
   <div class="o-container o-container--small u-push-down">
@@ -107,6 +109,6 @@
 </section>
 
 <% content_for :javascript do %>
-  new QBE.Voting();
-  new QBE.Comment();
+  QBE.instances.voting = new QBE.Voting();
+  QBE.instances.comment = new QBE.Comment();
 <% end %>

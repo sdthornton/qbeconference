@@ -1,4 +1,4 @@
-<% cache comment do %>
+<% cache [comment, (user_signed_in? ? current_user.id : '0')] do %>
   <div class="o-comment__info u-text-gray u-font-monospace">
     <small>
       <%= comment.created_by %> &bull;

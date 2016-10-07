@@ -22,6 +22,7 @@
     function waitForJS() {
       if (window.QBE && QBE.isReady) {
         clearTimeout(window.waitForJSTimer);
+        QBE.instances = {};
         <%= yield :javascript %>
       } else {
         window.waitForJSTimer = setTimeout(waitForJS, 250);
