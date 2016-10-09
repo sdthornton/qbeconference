@@ -2,9 +2,13 @@
   @include clearfix;
   color: color(black);
   font-family: $font-monospace;
+  left: 0;
   max-height: 5*$base-line-height;
   padding: $base-line-height 0;
+  position: absolute;
   text-align: center;
+  top: 0;
+  width: 100%;
 }
 
 .o-countdown__number {
