@@ -2,15 +2,12 @@
   <div class="o-container">
     <div class="o-grid">
       <div class="o-grid__cell o-grid__cell--8">
-        <img
-          src="<%= image_path('press-and-papers.webp') %>"
-          fallback="<%= image_path('press-and-papers.jpg') %>"
-          onerror="this.onerror=null;this.src=this.getAttribute('fallback')"
-          alt="Reading about what everyone has been saying about the question-behavior effect."
-        />
+        <%= fancy_image_tag 'press-and-papers.jpg',
+              aspect: 1060/1600.0,
+              alt: "Reading about what everyone has been saying about the question-behavior effect." %>
       </div>
       <div class="o-grid__cell o-grid__cell--6 o-grid__cell--pull-2">
-        <h3 class="u-double-push-down">We're not the only ones talking. Check out what others have said about the Question-Behavior Effect.</h3>
+        <h3 class="u-double-push-down u-relative">We're not the only ones talking. Check out what others have said about the Question-Behavior Effect.</h3>
       </div>
     </div>
 
@@ -37,4 +34,5 @@
 
 <% content_for :javascript do %>
   QBE.instances.sortPapers = new QBE.SortPapers();
+  QBE.instances.loadImages = new QBE.LoadImages();
 <% end %>

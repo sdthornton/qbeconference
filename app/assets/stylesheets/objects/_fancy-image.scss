@@ -1,0 +1,38 @@
+.o-fancy-image {
+  background-color: #cfccca;
+  overflow: hidden;
+}
+
+.o-fancy-image--use-background {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.o-fancy-image__loader,
+.o-fancy-image__image {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.2s linear;
+  width: 100%;
+}
+
+.o-fancy-image__image {
+  opacity: 0;
+
+  &.js-loaded {
+    opacity: 1;
+  }
+}
+
+.o-fancy-image__loader {
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+  transform: scale(1);
+}

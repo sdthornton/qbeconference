@@ -1,4 +1,10 @@
 <section class="v-home-banner u-text-white u-text-center">
+
+  <%= fancy_image_tag "banner-large.jpg",
+        use_background: true,
+        id: "home-image",
+        aspect: 1088/2880.0 %>
+
   <div class="o-container">
     <h1 class="v-home-banner__heading u-text-white u-font-bold u-display-inline-block">
       Question-Behavior Effect
@@ -18,21 +24,16 @@
   <div class="o-container v-home-roundtable-container">
     <div class="o-grid">
       <div class="v-home-roundtable-image o-grid__cell o-grid__cell--8 u-double-push-down">
-        <img
-          src="<%= image_path('question.webp') %>"
-          fallback="<%= image_path('question.jpg') %>"
-          onerror="this.onerror=null;this.src=this.getAttribute('fallback')"
-          class="u-push-down"
-        />
+        <%= fancy_image_tag("question.jpg", class: "u-push-down", aspect: 928/1600.0) %>
       </div>
 
       <div class="v-home-roundtable-cell o-grid__cell o-grid__cell--6 o-grid__cell--pull-2">
         <div class="v-home-roundtable c-xwide-shadow u-bg-white u-large-bottom-padding u-radius u-relative">
           <div class="o-countdown u-bg-light-gray">
-            <div class="o-countdown__number" data-countdown="days"></div>
-            <div class="o-countdown__number" data-countdown="hours"></div>
-            <div class="o-countdown__number" data-countdown="minutes"></div>
-            <div class="o-countdown__number" data-countdown="seconds"></div>
+            <div class="o-countdown__number" data-countdown="days">&nbsp;</div>
+            <div class="o-countdown__number" data-countdown="hours">&nbsp;</div>
+            <div class="o-countdown__number" data-countdown="minutes">&nbsp;</div>
+            <div class="o-countdown__number" data-countdown="seconds">&nbsp;</div>
           </div>
           <h2 class="u-no-bottom-margin u-push-down">The Roundtable</h2>
           <h5 class="c-sub-heading u-font-normal u-font-monospace">ACR, October 27, 2016</h5>
@@ -67,11 +68,7 @@
           href="http://www.huffingtonpost.com/entry/psychology-new-years-resolutions_us_5683e286e4b0b958f65ad409"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <img
-            src="<%= image_path('huffington.webp') %>"
-            fallback="<%= image_path('huffington.jpg') %>"
-            onerror="this.onerror=null;this.src=this.getAttribute('fallback')"
-          />
+          <%= fancy_image_tag('huffington.jpg', aspect: 352/528.0) %>
           <span class="c-card__content">
             <span class="c-card__category">Press</span>
             <p class="u-font-bold u-font-sans-serif">Everything you need to know about making new year's resolutions</p>
@@ -84,11 +81,7 @@
           href="http://www.cbsnews.com/news/how-to-motivate-others-to-stick-with-new-years-resolutions/"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <img
-            src="<%= image_path('cbs.webp') %>"
-            fallback="<%= image_path('cbs.jpg') %>"
-            onerror="this.onerror=null;this.src=this.getAttribute('fallback')"
-          />
+          <%= fancy_image_tag('cbs.jpg', aspect: 528/528.0) %>
           <span class="c-card__content">
             <span class="c-card__category">Press</span>
             <p class="u-font-bold u-font-sans-serif">How to make New Year's resolutions stick? Ask, don't tell</p>
@@ -101,11 +94,7 @@
           href="http://www.sciencedirect.com/science/article/pii/S1057740815001102"
           class="c-card u-bg-light-gray" target="_blank"
         >
-          <img
-            src="<%= image_path('psychology.webp') %>"
-            fallback="<%= image_path('psychology.jpg') %>"
-            onerror="this.onerror=null;this.src=this.getAttribute('fallback')"
-          />
+          <%= fancy_image_tag('psychology.jpg', aspect: 352/528.0) %>
           <span class="c-card__content">
             <span class="c-card__category">Paper</span>
             <p class="u-font-bold u-font-sans-serif">A Meta-Analytic Synthesis of the Question-Behavior Effect</p>
@@ -128,4 +117,5 @@
 
 <% content_for :javascript do %>
   QBE.instances.countdown = new QBE.ACRCountdown();
+  QBE.instances.loadImages = new QBE.LoadImages();
 <% end %>

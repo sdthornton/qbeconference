@@ -5,7 +5,7 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', async: true %>
   <link href="https://fonts.googleapis.com/css?family=Inconsolata:400|Lato:300,400,700" rel="stylesheet">
 </head>
@@ -43,6 +43,24 @@
     ga('send', 'pageview');
   </script>
   <% end %>
+
+  <div id="outdated_browser_wrap" data-turbolinks-permanent>
+    <%= stylesheet_link_tag 'outdated-browser', media: 'screen' %>
+    <%= javascript_include_tag 'outdated-browser' %>
+    <div id="outdated">
+      <h6>Your browser is out-of-date!</h6>
+      <p class="u-font-sans-serif">We recommend updating your browser in order to best experience this site. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+      <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+    </div>
+    <script>
+      outdatedBrowser({
+        bgColor: '#f25648',
+        color: '#ffffff',
+        lowerThan: 'transform',
+        languagePath: ''
+      });
+    </script>
+  </div>
 
 </body>
 </html>
