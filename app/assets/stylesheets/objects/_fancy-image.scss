@@ -29,6 +29,11 @@
   &.js-loaded {
     opacity: 1;
   }
+
+  [data-turbolinks-preview] & {
+    opacity: 0;
+    transition: none;
+  }
 }
 
 .o-fancy-image__loader {

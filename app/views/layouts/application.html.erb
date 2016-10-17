@@ -20,12 +20,16 @@
 
   <script>
     function waitForJS() {
+      if (document.documentElement.hasAttribute("data-turbolinks-preview")) {
+        return false;
+      }
+
       if (window.QBE && QBE.isReady) {
         clearTimeout(window.waitForJSTimer);
         QBE.instances = {};
         <%= yield :javascript %>
       } else {
-        window.waitForJSTimer = setTimeout(waitForJS, 250);
+        return window.waitForJSTimer = setTimeout(waitForJS, 250);
       }
     };
 
