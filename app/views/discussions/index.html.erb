@@ -7,7 +7,11 @@
           Will you join the conversation?
         </h6>
         <div class="u-double-push-down">
-          <%= link_to "Add a new topic", new_discussion_path, class: "c-button c-button--primary" %>
+          <% if user_signed_in? %>
+            <%= link_to "Add a new topic", new_discussion_path, class: "c-button c-button--primary" %>
+          <% else %>
+            <%= link_to "Add a new topic", register_path(from_discussions: true), class: "c-button c-button--primary" %>      
+          <% end %>
         </div>
       </div>
       <div class="o-grid__cell o-grid__cell--8 u-push-down">

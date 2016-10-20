@@ -23,6 +23,12 @@
               <%= devise_error_messages! %>
 
               <div class="c-form__group">
+                <%= f.label :name, "Your name" %>
+                <%= f.text_field :name, class: "c-form__control", required: true %>
+                <small class="c-form__text u-text-gray">So that we can properly attribute your posts and comments</small>
+              </div>
+
+              <div class="c-form__group">
                 <%= f.label :email %>
                 <%= f.email_field :email, class: "c-form__control", autocapitalize: "off", autocorrect: "off", required: true %>
                 <small class="c-form__text u-text-gray">We promise to never sell or give away your info.</small>
@@ -30,7 +36,7 @@
 
               <div class="c-form__group">
                 <%= f.label :password %>
-                <%= f.password_field :password, class: "c-form__control", autofocus: true, autocomplete: "off", required: true, minlength: 6 %>
+                <%= f.password_field :password, class: "c-form__control", autocomplete: "off", required: true, minlength: 6 %>
                 <small class="c-form__text u-text-gray">At least <%= @minimum_password_length %> characters &amp; 3 bars in strength.</small>
                 <div class="o-password-strength-wrap">
                   <div id="password_strength" class="o-password-strength" data-strength="0">
@@ -74,6 +80,23 @@
     </div>
   </div>
 </section>
+
+<% if params[:from_discussions] %>
+<div class="o-notification">
+  <a href="#" class="o-notification__close js-close-notification" data-turbolinks="false">&times;</a>
+  <small>
+    <p class="u-no-bottom-margin">You'll need to be <u>registered</u> and
+    <u>logged in</u> before you can post a new discussion topic or comment on
+    an existing topic. Don't worry, registration is quick and secure!</p>
+  </small>
+</div>
+<script>
+document.querySelector('.js-close-notification').addEventListener('click', function (e) {
+  e.preventDefault();
+  document.querySelector('.o-notification').style.display = 'none';
+}, false);
+</script>
+<% end %>
 
 <% content_for :javascript do %>
   QBE.instances.password = new QBE.Password();

@@ -1,0 +1,24 @@
+.o-notification {
+  background: color(primary);
+  border-radius: $border-radius;
+  bottom: 1rem;
+  color: white;
+  max-width: 320px;
+  padding: 1.5rem;
+  position: fixed;
+  right: 1rem;
+  z-index: 999;
+}
+
+.o-notification__close {
+  color: color(gray-light);
+  cursor: pointer;
+  position: absolute;
+  right: 0.5rem;
+  text-decoration: none;
+  top: 0;
+
+  &:hover {
+    color: white !important;
+  }
+}
