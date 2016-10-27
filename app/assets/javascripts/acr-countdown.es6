@@ -15,6 +15,11 @@ QBE.ACRCountdown = class ACRCountdown {
     if (timestamp > this.lastStamp + 1000) {
       this.lastStamp = timestamp;
       this.setCountdown();
+    } else {
+      this.days.innerHTML = 0;
+      this.hours.innerHTML = 0;
+      this.minutes.innerHTML = 0;
+      this.seconds.innerHTML = 0;
     }
 
     return this.runner = requestAnimationFrame((stamp) => this.countdown(stamp));
