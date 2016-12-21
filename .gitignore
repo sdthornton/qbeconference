@@ -55,3 +55,7 @@ Thumbs.db
 
 # Ignore passenger logs
 passenger.*
+
+*.crt
+*.key
+*.log
