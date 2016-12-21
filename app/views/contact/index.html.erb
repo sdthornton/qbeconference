@@ -1,4 +1,4 @@
-<section class="u-large-vertical-padding">
+<section class="u-large-vertical-padding" style="padding-bottom: 12rem;">
   <div class="o-container o-container--medium">
     <div class="o-grid">
       <div class="o-grid__cell o-grid__cell--12 u-relative u-bottom-padding">
@@ -23,44 +23,6 @@
             <td><a href="https://twitter.com/qb_effect">@QB_Effect</a></td>
         </table>
       </div>
-      <!-- <div class="o-grid__cell o-grid__cell--10 o-grid__cell--pull-3">
-        <div class="c-card c-card--no-shadow">
-          <div class="c-card__content u-relative">
-            <div class="o-grid__cell o-grid__cell--10 o-grid__cell--offset-2">
-              <%= form_for @contact_form, html: { class: 'u-push-down u-bottom-padding' } do |f| %>
-                <%= flash[:recaptcha_error] %>
-
-                <% if user_signed_in? %>
-                  <%= f.hidden_field :email, value: current_user.email %>
-                <% else %>
-                  <div class="c-form__group">
-                    <%= f.label :email do %>
-                      Your email
-                    <% end %>
-                    <%= f.email_field :email, class: "c-form__control", autocapitalize: "off", autocorrect: "off", required: true %>
-                  </div>
-                <% end %>
-
-                <div class="c-form__group">
-                  <%= f.label :subject %>
-                  <%= f.text_field :subject, class: "c-form__control", required: true %>
-                </div>
-
-                <div class="c-form__group">
-                  <%= f.label :message %>
-                  <%= f.text_area :message, class: "c-form__control", rows: 8, required: true %>
-                </div>
-
-                <div class="c-form__group">
-                  <button type="submit" class="c-button c-button--accent icon-send">
-                    &nbsp;&nbsp;Send your message
-                  </button>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </section>
